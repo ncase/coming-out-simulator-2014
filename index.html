@@ -9,20 +9,80 @@
 		margin: 0;
 	}
 	#game{
-		
+
 		width:360px;
-		
 		height:100%;
 		min-height: 480px;
 		max-height: 640px;
+
+		overflow: hidden;
 
 		position: absolute;
 		margin:auto;
 		top:0; bottom:0; left:0; right:0;
 
 	}
+	#game #background{
+		position:absolute;
+		bottom:120px;
+		width:100%;height:520px;
+		background-repeat: none;
+	}
+
+
+
+
+	#game #dialogue{
+		position: absolute;
+		top:20px;
+		width:100%;
+	}
+	#game #dialogue > div{
+		position: relative;
+		font-family: sans-serif;
+		font-weight: 100;
+		font-size: 20px;
+		display: inline-block;
+		max-width: 250px;
+		padding:10px;
+		border-radius: 5px;
+		margin:25px;
+		margin-top: 10px;
+		margin-bottom: 0;
+	}
+	#game #dialogue > div:after{
+		top: 50%;
+		border: solid transparent;
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+		border-color: rgba(255, 255, 255, 0);
+		border-width: 10px;
+		margin-top: -10px;
+	}
+	#game #dialogue > div.other{
+		background: #fff;
+		text-align: left;
+		float:left;
+	}
+	#game #dialogue > div.other:after{
+	    right: 100%;
+		border-right-color: #fff;
+	}
+	#game #dialogue > div.you{
+		background: #4099ff;
+		text-align: right;
+		float:right;
+	}
+	#game #dialogue > div.you:after{
+	    left: 100%;
+		border-left-color: #4099ff;
+	}
+
 	#game #choices{
-		background:#333;
+		background:#ccc;
 		position:absolute; bottom:0;
 		width:330px; height:90px;
 		padding: 15px;
@@ -31,7 +91,7 @@
 		font-weight: 100;
 		font-size: 20px;
 		line-height: 30px;
-		color: #ccc;
+		color: #777;
 		text-align: center;
 	}
 	</style>
@@ -39,7 +99,18 @@
 
 <body>
 	<div id="game">
-		<img src="sketch.jpg" style="position:absolute; width:100%; height:100%"/>
+		<div id="background" style="background-image:url(sketch.png)"></div>
+		<div id="dialogue">
+			<div class="you">
+				I'm gonna study at Jon's tomorrow.
+			</div>
+			<div class="other">
+				Really.
+			</div>
+			<div class="other">
+				You spend a lot of time with him.
+			</div>
+		</div>
 		<div id="choices">
 			Actually, he's... more than a friend.
 			<br>
