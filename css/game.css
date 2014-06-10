@@ -31,17 +31,29 @@ body{
 
 /** Choices **/
 #game #choices{
-	background:#333;
+	background:#222;
 	position:absolute; bottom:0;
-	width:330px; height:90px;
-	padding: 15px;
+	width:100%; height:90px;
+	padding: 15px 0;
+}
+#game #choices > div{
+
+	background:#222;
+	width:350px; height:20px;
+	padding: 5px;
 
 	font-family: sans-serif;
 	font-weight: 100;
-	font-size: 20px;
-	line-height: 30px;
+	font-size: 18px;
 	color: #777;
 	text-align: center;
+
+	cursor: pointer;
+
+}
+#game #choices > div:hover{
+	background: #333;
+	color:#aaa;
 }
 
 /** Dialogue **/
