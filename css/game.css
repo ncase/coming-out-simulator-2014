@@ -45,15 +45,15 @@ body{
 	font-family: sans-serif;
 	font-weight: 100;
 	font-size: 18px;
-	color: #777;
+	color: #bbb;
 	text-align: center;
 
 	cursor: pointer;
 
 }
 #game #choices > div:hover{
-	background: #333;
-	color:#aaa;
+	background: #444;
+	color:#fff;
 }
 
 /** Dialogue **/
@@ -87,21 +87,21 @@ body{
 	border-width: 10px;
 	margin-top: -10px;
 }
-#game #dialogue > div.other{
+#game #dialogue > div.left{
 	background: #fff;
 	text-align: left;
 	float:left;
 }
-#game #dialogue > div.other:after{
+#game #dialogue > div.left:after{
     right: 100%;
 	border-right-color: #fff;
 }
-#game #dialogue > div.you{
+#game #dialogue > div.right{
 	background: #4099ff;
 	text-align: right;
 	float:right;
 }
-#game #dialogue > div.you:after{
+#game #dialogue > div.right:after{
     left: 100%;
 	border-left-color: #4099ff;
 }

@@ -1,5 +1,5 @@
-n = new Character("you");
-m = new Character("other");
+n = new Character({ align:"right", color:"#4099ff" });
+m = new Character({ align:"left", color:"#ffffff" });
 
 function Start(){
 
@@ -7,11 +7,17 @@ function Start(){
 	m("Really.");
 	m("You spend a lot of time with him.");
 
-	choose("Actually, he's... more than a friend.",function(){
-	});
-	choose("Well yeah, that's what good pals do.",function(){
-	});
-	choose("He's just a study buddy, that's all.",function(){
+	Choose({
+		"Actually, he's... more than a friend.": function(message){
+			n(message);
+		},
+		"Well yeah, that's what good pals do.": function(message){
+			n(message);
+		},
+		"He's just a study buddy, that's all.": function(message){
+			n(message);
+		}
 	});
 
 }
+
