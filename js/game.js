@@ -39,16 +39,16 @@ function Start(){
 	n("Er...");
 
 	Choose({
-		"Computer Science.": function(message){
+		"Chemistry.": function(message){
+			$.studying_subject = "Chemistry";
+			Start_2(message);
+		},
+		"Calculus.": function(message){
+			$.studying_subject = "Calculus";
+			Start_2(message);
+		},
+		"Compsci.": function(message){
 			$.studying_subject = "Computers";
-			Start_2(message);
-		},
-		"Mathematics.": function(message){
-			$.studying_subject = "Math";
-			Start_2(message);
-		},
-		"Economics.": function(message){
-			$.studying_subject = "Economics";
 			Start_2(message);
 		}
 	});
@@ -59,7 +59,7 @@ function Start_2(message){
 
 	n(message);
 	m("Good.");
-	m("You really, really could improve your grades in that subject.");
+	m("You really, really could improve your grades in your "+$.studying_subject+" class.");
 	n(". . .");
 	m("So, I'll be at the library tomorrow.");
 	m("Will I see you studying there?");
@@ -220,7 +220,7 @@ function Buddy_Choice(){
 			$.thinks_you_hate_gays = true;
 			n(message);
 			m("See? You also think there's something not right about it.");
-			n("...right.");
+			n("...sure.");
 			Buddy_Aftermath();
 		},
 		"Maybe... I guess he might be gay.": function(message){
@@ -260,20 +260,19 @@ function Buddy_Aftermath_2(message){
 	m("Let's go back to talking about your grades.");
 	m("Now, what did you say you were studying tomorrow?");
 	n(". . .");
-	n(". . .");
 	n("Errrmmmmm...");
 
 	Choose({
-		"Computer Science?": function(message){
+		"Compsci?": function(message){
 			$.studying_subject_2 = "Computers";
 			Grades_Start(message);
 		},
-		"Mathematics?": function(message){
-			$.studying_subject_2 = "Math";
+		"Chemistry?": function(message){
+			$.studying_subject_2 = "Chemistry";
 			Grades_Start(message);
 		},
-		"Economics?": function(message){
-			$.studying_subject_2 = "Economics";
+		"Calculus?": function(message){
+			$.studying_subject_2 = "Calculus";
 			Grades_Start(message);
 		}
 	});
