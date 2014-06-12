@@ -123,7 +123,7 @@ function Buddy_1_point_5(){
 
 	Choose({
 		"Oh. No, yeah, we're just friends.": function(message){
-			if($.relationship=="study"){
+			if($.relationship=="study" && !$.lying_about_relationship){
 				Buddy_Caught_Lying_1(message,Buddy_2);
 			}else{
 				Buddy_2(message);
@@ -175,7 +175,7 @@ function Buddy_4(message){
 		},
 		"Don't say that about my friend!": function(message){
 
-			if($.relationship=="study"){
+			if($.relationship=="study" && !$.lying_about_relationship){
 				Buddy_Caught_Lying_1(message,function(message){
 
 					n(message);
@@ -211,6 +211,10 @@ function Buddy_4(message){
 }
 
 function Buddy_Choice(){
+	if($.relationship=="friend"){
+		m("And since you say he's a 'good pal'...");
+		m("People might think you're a gay like him, too.");
+	}
 	if($.relationship=="best friend"){
 		m("And since you say he's your BEST friend...");
 		m("People might think you're a gay like him, too.");
@@ -223,9 +227,22 @@ function Buddy_Choice(){
 			n("...sure.");
 			Buddy_Aftermath();
 		},
-		"Maybe... I guess he might be gay.": function(message){
-			n(message);
-			Buddy_Aftermath();
+		"Maybe... my friend might be gay.": function(message){
+
+			if($.relationship=="study" && !$.lying_about_relationship){
+				Buddy_Caught_Lying_1(message,function(message){
+					n(message);
+					m("Okay.");
+					m("Just don't lie to me.");
+					n("I won't.");
+					m(". . .");
+					Buddy_Aftermath();
+				});
+			}else{
+				n(message);
+				Buddy_Aftermath();
+			}
+			
 		},
 		"What's wrong with being gay?!": function(message){
 			n(message);
@@ -237,7 +254,7 @@ function Buddy_Choice(){
 
 
 function Buddy_Aftermath(){
-	m("Don't get me wrong!");
+	m("Don't get me wrong.");
 	m("I'm not saying those kind of people are bad!");
 	m("I just think... you should be careful around one of them.");
 	m("Jack might, you know, try to recruit you.");

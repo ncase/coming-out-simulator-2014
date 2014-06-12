@@ -61,6 +61,12 @@ body{
 	position: absolute;
 	top:20px;
 	width:100%;
+
+	-webkit-transition: top 0.1s ease-in-out;
+	-moz-transition: top 0.1s ease-in-out;
+	-ms-transition: top 0.1s ease-in-out;
+	-o-transition: top 0.1s ease-in-out;
+	transition: top 0.1s ease-in-out;
 }
 #game #dialogue > div{
 	position: relative;

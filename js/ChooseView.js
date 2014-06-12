@@ -12,7 +12,7 @@ subscribe("/say", function(character, message){
 	dialogueDOM.appendChild(dom);
 
 	// If dialogue bubbles are too big, scroll it.
-	var maxDialogueSpace = game.clientHeight-(240+120); // Game height - (image height + choice height)
+	var maxDialogueSpace = game.clientHeight-(260+120); // Game height - (image height + choice height)
 	if(dialogueDOM.clientHeight+dialogueDOMOffset > maxDialogueSpace){
 		dialogueDOMOffset = maxDialogueSpace - dialogueDOM.clientHeight;
 		dialogueDOM.style.top = dialogueDOMOffset+"px";
