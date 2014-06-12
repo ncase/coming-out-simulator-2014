@@ -3,15 +3,15 @@ n = new Character({ align:"right", color:"#4099ff" });
 m = new Character({ align:"left", color:"#ffffff" });
 
 // PLOT POINTS:
-// 1) Studying at Jon's
-// 2) Suspecting Jon is gay
+// 1) Studying at Jack's
+// 2) Suspecting Jack is gay
 // 3) Trying to get you a private tutor (threatening your relationship)
 
 // Needs: more inconsistency & lying caught in the 2nd section.
 
 //. . .
 
-// 4) Convinced Jon's negatively affecting you
+// 4) Convinced Jack's negatively affecting you
 // 5) Crying and gaslighting (Reveal -- your phone's texts were read.)
 
 // What ARE you.
@@ -26,7 +26,7 @@ m = new Character({ align:"left", color:"#ffffff" });
 // 10) Something horrible. (Punch / Change schools / Private tutor)
 
 ///////////////////////////////////
-////// 1) STUDYING AT JON'S ///////
+////// 1) STUDYING AT Jack'S ///////
 ///////////////////////////////////
 
 function Start(){
@@ -63,7 +63,7 @@ function Start_2(message){
 	n(". . .");
 	m("So, I'll be at the library tomorrow.");
 	m("Will I see you studying there?");
-	n("Actually, I'm gonna study at Jon's place.");
+	n("Actually, I'm gonna study at Jack's place.");
 	m("Again?");
 	m("You spend a lot of time with him.");
 
@@ -76,7 +76,7 @@ function Start_2(message){
 			$.relationship = "friend";
 			Buddy_1(message);
 		},
-		"Mom, Jon is... more than a friend.": function(message){
+		"Mom, Jack is... more than a friend.": function(message){
 			$.relationship = "best friend";
 			n(message);
 			m("Oh, like best friends?");
@@ -92,14 +92,14 @@ function Start_2(message){
 
 
 ///////////////////////////////////////
-////// 2) SUSPECTING JON IS GAY ///////
+////// 2) SUSPECTING Jack IS GAY ///////
 ///////////////////////////////////////
 
 
 function Buddy_1(message){
 	n(message);
 	m("Okay. I'm just making sure.");
-	n("Of what?");
+	n("Of... what?");
 	Buddy_1_point_5();
 }
 
@@ -142,7 +142,7 @@ function Buddy_2(message){
 		m("Just don't lie to me.");
 		n("I won't.");
 		m(". . .");
-		m("But... about you hanging out with Jon.");
+		m("But... about you hanging out with Jack.");
 	}
 	m("It's just that some people might assume things, since...");
 	m("You know... he looks like...");
@@ -163,7 +163,7 @@ function Buddy_4(message){
 	n(message);
 	m("Oh, that's like a zen thing, right?");
 	n("Um.");
-	m("Zen is also about nature, and your classmate Jon, he...");
+	m("Zen is also about nature, and your classmate Jack, he...");
 	m("...you know, doesn't seem natural?");
 	Choose({
 		"You think he's gay.": function(message){
@@ -240,7 +240,7 @@ function Buddy_Aftermath(){
 	m("Don't get me wrong!");
 	m("I'm not saying those kind of people are bad!");
 	m("I just think... you should be careful around one of them.");
-	m("Jon might, you know, try to recruit you.");
+	m("Jack might, you know, try to recruit you.");
 
 	Choose({
 		"what.": Buddy_Aftermath_2,
@@ -300,8 +300,13 @@ function Grades_Start_1(){
 	m("Now you tell me it's "+$.studying_subject_2+"?");
 	$.lying_about_studying = true;
 	n("Mom, I was just confus--");
+	if($.lying_about_relationship){
+		m("This is TWICE you've lied to me during this dinner.");
+		n("I'm sorry...");
+	}
 	m("Either way, your grades in both subjects are terrible.");
 	n(". . .");
+	Grades_Explaining();
 }
 
 function Grades_Start_2(){
@@ -311,10 +316,16 @@ function Grades_Start_2(){
 	m(". . .");
 	m("Still, your grades in your "+$.studying_subject_2+" class are terrible.");
 	n(". . .");
+	Grades_Explaining();
 }
 
-function Grades_Explaining_Bad_Grades(){
+// For now, end the conversation here.
+// Feedback FRIIIIDAY.
 
+function Grades_Explaining(){
+	/*Choose({
+		"That's why I'm studying more with Jack.": n,
+		"Look, I'm trying. I really am.": n,
+		"My grades are fine.": n
+	});*/
 }
-
-
