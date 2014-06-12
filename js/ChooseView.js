@@ -11,6 +11,11 @@ subscribe("/say", function(character, message){
 	dom.innerHTML = message;
 	dialogueDOM.appendChild(dom);
 
+	// Fade in
+	setTimeout(function(){
+		dom.style.opacity = 1;
+	},1);
+
 	// If dialogue bubbles are too big, scroll it.
 	var maxDialogueSpace = game.clientHeight-(260+120); // Game height - (image height + choice height)
 	if(dialogueDOM.clientHeight+dialogueDOMOffset > maxDialogueSpace){

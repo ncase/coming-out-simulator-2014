@@ -48,7 +48,7 @@ function Start(){
 			Start_2(message);
 		},
 		"Compsci.": function(message){
-			$.studying_subject = "Computers";
+			$.studying_subject = "Computer Science";
 			Start_2(message);
 		}
 	});
@@ -281,7 +281,7 @@ function Buddy_Aftermath_2(message){
 
 	Choose({
 		"Compsci?": function(message){
-			$.studying_subject_2 = "Computers";
+			$.studying_subject_2 = "Computer Science";
 			Grades_Start(message);
 		},
 		"Chemistry?": function(message){
@@ -318,7 +318,7 @@ function Grades_Start_1(){
 	n("Mom, I was just confus--");
 	if($.lying_about_relationship){
 		m("This is TWICE you've lied to me during this dinner.");
-		n("I'm sorry...");
+		n("I didn't lie about--");
 	}
 	m("Either way, your grades in both subjects are terrible.");
 	n(". . .");
