@@ -339,6 +339,7 @@ function Grades_Start_2(){
 // Feedback FRIIIIDAY.
 
 function Grades_Explaining(){
+	alert("End of rough prototype! Yup, how anti-climatic.");
 	/*Choose({
 		"That's why I'm studying more with Jack.": n,
 		"Look, I'm trying. I really am.": n,
