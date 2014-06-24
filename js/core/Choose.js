@@ -1,10 +1,3 @@
-window.onload = function(){
-	//Start_Jack_1();
-	Start();
-}
-
-////////////
-
 var $ = {};
 
 ////////////

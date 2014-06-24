@@ -9,8 +9,12 @@ function Start(){
 
 	Choose({
 		"Let's play this thing!": Play,
-		"Hm, tell me more about this game.": About,
-		"Who are you? You made this game?": Credits
+		"Who are you? (Credits)": function(){
+			Credits("Who are you?");
+		},
+		"Hm, tell me more. (About This Game)": function(){
+			About("Hm, tell me more.");
+		}
 	});
 
 }
@@ -45,7 +49,7 @@ function Play(message){
 		p("Shush.");
 	}
 
-	N("This game includes dialogue that I, my parents, and my ex-boyfriend actually said.");
+	N("This game includes dialogue that I, my parents, and my boyfriend actually said.");
 	N("As well as all the things we could have, should have, and never would have said.");
 	N("It doesn't matter which is which.");
 	N("Not anymore.");
@@ -78,12 +82,7 @@ function Credits(message){
 
 	$.asked_credits = true;
 	
-	if($.asked_about){
-		p(message);
-	}else{
-		p("Who are you?");
-	}
-	
+	p(message);
 	N("Ah, how rude of me! Let me introduce myself.");
 	N("Hi, I'm Nicky Case.");
 	N("That's not my legal name, it's just my real name.");
@@ -117,7 +116,9 @@ function Credits(message){
 	}else{
 		Choose({
 			"Speaking of that, can we play it now?": Play,
-			"And why did you make this game?": About
+			"Why'd you make this? (About This Game)": function(){
+				About("Why'd you make this?");
+			}
 		});
 	}
 
@@ -170,7 +171,9 @@ function About(message){
 	}else{
 		Choose({
 			"Bad puns aside, can we play now?": Play,
-			"So who ARE you, anyway?": Credits
+			"So who ARE you? (Credits)": function(){
+				Credits("So who ARE you?");
+			}
 		});
 	}
 

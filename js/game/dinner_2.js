@@ -39,21 +39,21 @@ function Start_Dinner_2(){
 	Choose({
 		"Chemistry.": function(message){
 			$.studying_subject = "Chemistry";
-			Start_2(message);
+			Start_Dinner_2_2(message);
 		},
 		"Calculus.": function(message){
 			$.studying_subject = "Calculus";
-			Start_2(message);
+			Start_Dinner_2_2(message);
 		},
 		"Compsci.": function(message){
 			$.studying_subject = "Computer Science";
-			Start_2(message);
+			Start_Dinner_2_2(message);
 		}
 	});
 
 }
 
-function Start_2(message){
+function Start_Dinner_2_2(message){
 
 	n(message);
 	m("Good.");
