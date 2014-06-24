@@ -58,7 +58,13 @@ subscribe("/choose", function(choices){
 
 subscribe("/scene", function(image){
 	backgroundDOM.style.backgroundImage = "url("+image+")";
+
+	// Empty the dialogue
 	dialogueDOM.innerHTML = "";
 	dialogueDOM.style.top = "20px";
 	dialogueDOMOffset = 20;
+
+	// Empty the choices
+	choicesDOM.innerHTML = "";
+
 });
