@@ -27,7 +27,7 @@
 
 function Start_Dinner_2(){
 
-	Scene("img/sketch.png");
+	Scene("img/dinner_2.png");
 
 	n("Hey mom.");
 	m("Hi sweetie. What's your plans for tomorrow?");

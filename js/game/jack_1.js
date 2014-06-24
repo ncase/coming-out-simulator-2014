@@ -154,7 +154,7 @@ function Thanks(){
 	j("Although...");
 	n("Hope I can convince the parents to let me out overnight.");
 
-	j("I wish you didn't tell your mom and dad we were just studying.");
+	j("I wish you didn't tell your mom and dad we were just studying, when we were actually at the cinema.");
 	n("I'll pretend we'll be cramming for the midter-- huh?");
 
 	j("You can't keep hiding like this.");
@@ -261,7 +261,7 @@ function Hiding_2(message){
 function Hiding_3(message){
 	
 	n(message);
-	n(". . .");
+	j(". . .");
 	n("I don't want to freak them out too much.");
 	n("Still need to convince them to let me stay at your place tomorrow night.");
 	n("I'll tell 'em I'm studying with you again.");
