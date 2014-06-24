@@ -1,3 +1,9 @@
+window.onclick = function(){
+	if(choicesDOM.innerHTML==""){
+		skipStep();
+	}
+}
+
 var gameDOM = document.getElementById("game");
 var dialogueDOM = document.getElementById("dialogue");
 var dialogueDOMOffset = 20;

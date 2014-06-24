@@ -1,5 +1,6 @@
 window.onload = function(){
-	Start_Jack_1();
+	//Start_Jack_1();
+	Start();
 }
 
 ////////////
@@ -16,15 +17,10 @@ window.requestAnimationFrame = window.requestAnimationFrame
 var lastTimestep = null;
 var ticker = 0;
 function step(timestamp) {
-
-	// Timestep distance
-	if(lastTimestep===null) lastTimestep=timestamp;
-	var delta = timestamp-lastTimestep;
-	lastTimestep=timestamp;
 	
 	// Do the next thing in the queue
 	if(_queue.length>0){
-		ticker += delta;
+		ticker += 1000/60; // HARD CODED. So it pauses when you're away.
 		if(ticker > _queue[0].time){
 			var item = _queue.shift();
 			item.callback();
@@ -39,6 +35,14 @@ requestAnimationFrame(step);
 
 var timer = 0;
 var ticker = 0;
+
+function skipStep(){
+	if(_queue.length>0){
+		var item = _queue.shift();
+		item.callback();
+		ticker = item.time;
+	}
+}
 
 function resetTimer(){
 	timer = 0;
@@ -82,10 +86,9 @@ function Choose(choices){
 function Scene(image){
 	queue(function(){
 		publish("/scene", [image]);
-		resetTimer();
 	});
 }
 
 function Wait(duration){
-	timer += duration;
+	queue(function(){},duration);
 }
