@@ -1,7 +1,3 @@
-// Characters!
-n = new Character({ align:"right", color:"#4099ff" });
-m = new Character({ align:"left", color:"#ffffff" });
-
 // PLOT POINTS:
 // 1) Studying at Jack's
 // 2) Suspecting Jack is gay
@@ -29,7 +25,9 @@ m = new Character({ align:"left", color:"#ffffff" });
 ////// 1) STUDYING AT Jack'S ///////
 ///////////////////////////////////
 
-function Start(){
+function Start_Dinner_2(){
+
+	Scene("img/sketch.png");
 
 	n("Hey mom.");
 	m("Hi sweetie. What's your plans for tomorrow?");

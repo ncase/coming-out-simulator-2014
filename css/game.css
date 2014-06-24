@@ -26,6 +26,7 @@ body{
 	bottom:120px;
 	width:100%;height:520px;
 	background-repeat: none;
+	background-color: #000;
 }
 
 
@@ -39,12 +40,13 @@ body{
 #game #choices > div{
 
 	background:#222;
-	width:350px; height:20px;
-	padding: 5px;
+	width:350px; height:18px;
+	padding: 6px;
 
+	white-space: nowrap;
 	font-family: sans-serif;
 	font-weight: 100;
-	font-size: 18px;
+	font-size: 16px;
 	color: #bbb;
 	text-align: center;
 
@@ -102,20 +104,18 @@ body{
 	margin-top: -10px;
 }
 #game #dialogue > div.left{
-	background: #fff;
 	text-align: left;
 	float:left;
 }
 #game #dialogue > div.left:after{
     right: 100%;
-	border-right-color: #fff;
+	border-right-color: inherit;
 }
 #game #dialogue > div.right{
-	background: #4099ff;
 	text-align: right;
 	float:right;
 }
 #game #dialogue > div.right:after{
     left: 100%;
-	border-left-color: #4099ff;
+    border-left-color: inherit;
 }

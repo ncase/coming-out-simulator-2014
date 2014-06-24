@@ -1,4 +1,4 @@
-function Start(){
+function Start_Jack_1(){
 	
 	Scene("img/intro.png");
 
@@ -70,7 +70,7 @@ function Play(message){
 	Wait(1000);
 	Scene("");
 	Wait(1000);
-	Start_Jack_1();
+	Start_Dinner();
 
 }
 

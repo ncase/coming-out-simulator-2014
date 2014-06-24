@@ -9,6 +9,9 @@ subscribe("/say", function(character, message){
 	// Add dialogue bubble
 	var dom = document.createElement("div");
 	dom.setAttribute("class",character.align);
+	dom.style.color = character.color || "#000";
+	dom.style.background = character.background || "#FFF";
+	dom.style.borderLeftColor = dom.style.borderRightColor = character.background || "#FFF";
 	dom.innerHTML = message;
 	dialogueDOM.appendChild(dom);
 
@@ -45,10 +48,17 @@ subscribe("/choose", function(choices){
 		choicesDOM.appendChild(button);
 	}
 
+	// Choice padding, for 1-3 choices
+	var height = (labels.length*30);
+	var padding = (120-height)/2;
+	choicesDOM.style.height = height+"px";
+	choicesDOM.style.padding = padding+"px 0";
+
 });
 
 subscribe("/scene", function(image){
 	backgroundDOM.style.backgroundImage = "url("+image+")";
 	dialogueDOM.innerHTML = "";
 	dialogueDOM.style.top = "20px";
+	dialogueDOMOffset = 20;
 });
