@@ -2,6 +2,7 @@ var gameDOM = document.getElementById("game");
 var dialogueDOM = document.getElementById("dialogue");
 var dialogueDOMOffset = 20;
 var choicesDOM = document.getElementById("choices");
+var backgroundDOM = document.getElementById("background");
 
 subscribe("/say", function(character, message){
 
@@ -47,4 +48,7 @@ subscribe("/choose", function(choices){
 });
 
 subscribe("/scene", function(image){
+	backgroundDOM.style.backgroundImage = "url("+image+")";
+	dialogueDOM.innerHTML = "";
+	dialogueDOM.style.top = "20px";
 });
