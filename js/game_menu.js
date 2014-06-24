@@ -73,8 +73,7 @@ function Play(message){
 	n("Exactly.");
 
 	n(". . .");
-	n("As much as I try...");
-	n("It's hard not to remember that night.");
+	n("It's hard not to remember.");
 
 	Scene("img/sketch.png");
 
@@ -139,8 +138,8 @@ function About(message){
 		n("I wanted to tell my story.");
 	}else{
 		n("This game...");
-		n("...more like an interactive tale, really...");
-		n("...is a very personal story of mine.");
+		n("...more like a conversation simulator, really...");
+		n("...is a very personal story.");
 	}
 	
 	p("Of course. You narcissist.");
