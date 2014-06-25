@@ -30,7 +30,39 @@ function Start_Dinner_2(){
 	Scene("img/dinner_2.png");
 
 	n("Hey mom.");
-	m("Hi sweetie. What's your plans for tomorrow?");
+	m("Hi sweetie.");
+	m("Your father's running late. He'll be joining us for dinner in an hour's time.");
+
+	Choose({
+		"Cool. Let's eat.": function(message){
+			n(message);
+			n("*nom nom nom*");
+			m(". . .");
+			m("What's your plans for tomorrow?");
+			Start_Dinner_2_1();
+		},
+		"I have something to tell both of you.": function(message){
+			n(message);
+			m("Alright. Tell us both later when he comes back.");
+			n("Oh. Okay.");
+			m(". . .");
+			n("*nom nom nom*");
+			m("So, what's your plans for tomorrow?");
+			Start_Dinner_2_1();
+		},
+		"There's something I want to ask just you first.": function(message){
+			n(message);
+			m("Hold on Nick, I haven't asked about your day yet!");
+			n("Today was fine.");
+			m("Okay. And what's your plans for tomorrow?");
+			Start_Dinner_2_1();
+		}
+	});
+
+}
+
+function Start_Dinner_2_1(){
+
 	n("Oh. Uh... studying.")
 	n("Yeah. Tomorrow I'm studying.");
 	m("What subject?");
@@ -70,20 +102,21 @@ function Start_Dinner_2_2(message){
 			$.relationship = "study";
 			Buddy_1(message);
 		},
-		"Well yeah, that's what good pals do.": function(message){
-			$.relationship = "friend";
-			Buddy_1(message);
-		},
 		"Mom, Jack is... more than a friend.": function(message){
 			$.relationship = "best friend";
 			n(message);
 			m("Oh, like best friends?");
 			n("Um. Well--");
-			m("Hey, that's okay to have a best friend.");
-			n("...Okay.");
+			m("So you're just hanging out, not studying.");
+			$.lying_about_hanging_out = true;
+			n("We ARE studying!");
 			m(". . .");
 			Buddy_1_point_5();
 		},
+		"Well yeah, that's what good pals do.": function(message){
+			$.relationship = "friend";
+			Buddy_1(message);
+		}
 	});
 
 }
@@ -96,6 +129,10 @@ function Start_Dinner_2_2(message){
 
 function Buddy_1(message){
 	n(message);
+	$.lying_about_hanging_out = true;
+	m("Oh. So you're just hanging out, not studying.");
+	n("We ARE studying!");
+	m(". . .");
 	m("Okay. I'm just making sure.");
 	n("Of... what?");
 	Buddy_1_point_5();
@@ -127,8 +164,8 @@ function Buddy_1_point_5(){
 				Buddy_2(message);
 			}
 		},
-		"What do you mean by... wrong idea?": Buddy_3,
-		"The wrong idea might be the right idea.": Buddy_4
+		"The wrong idea might be the right idea.": Buddy_4,
+		"What do you mean by... wrong idea?": Buddy_3
 	});
 
 }
@@ -225,6 +262,11 @@ function Buddy_Choice(){
 			n("...sure.");
 			Buddy_Aftermath();
 		},
+		"What's wrong with being gay?!": function(message){
+			n(message);
+			m("Nothing! Nothing.");
+			Buddy_Aftermath();
+		},
 		"Maybe... my friend might be gay.": function(message){
 
 			if($.relationship=="study" && !$.lying_about_relationship){
@@ -241,11 +283,6 @@ function Buddy_Choice(){
 				Buddy_Aftermath();
 			}
 			
-		},
-		"What's wrong with being gay?!": function(message){
-			n(message);
-			m("Nothing! Nothing.");
-			Buddy_Aftermath();
 		}
 	});
 }
@@ -314,7 +351,7 @@ function Grades_Start_1(){
 	m("Now you tell me it's "+$.studying_subject_2+"?");
 	$.lying_about_studying = true;
 	n("Mom, I was just confus--");
-	if($.lying_about_relationship){
+	if($.lying_about_hanging_out || $.lying_about_relationship){
 		m("This is TWICE you've lied to me during this dinner.");
 		n("I didn't lie about--");
 	}
@@ -327,20 +364,16 @@ function Grades_Start_2(){
 	m("You hesitated for a moment there.");
 	n("I was eating.");
 	m("Okay.");
+	if($.lying_about_hanging_out){
+		m("I wonder if you're studying with Jack at all, or just always hanging out.");
+		n("We study.");
+	}
 	m(". . .");
 	m("Still, your grades in your "+$.studying_subject_2+" class are terrible.");
 	n(". . .");
 	Grades_Explaining();
 }
 
-// For now, end the conversation here.
-// Feedback FRIIIIDAY.
-
 function Grades_Explaining(){
-	n("[End of rough prototype! Yup, how anti-climatic.]");
-	/*Choose({
-		"That's why I'm studying more with Jack.": n,
-		"Look, I'm trying. I really am.": n,
-		"My grades are fine.": n
-	});*/
+	Start_Dinner_3();
 }

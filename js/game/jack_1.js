@@ -210,7 +210,9 @@ function Hiding(){
 		j("And they were very supportive!");
 	}
 
+	j("You're in Canada now. A lot of people here are LGBT friendly.");
 	j("How do you know your parents won't be supportive of you, too?");
+
 	Choose({
 		"Asian parents are usually very homophobic.": Hiding_2,
 		"I don't know... I guess I haven't tried...": Hiding_2,
@@ -251,7 +253,7 @@ function Hiding_2(message){
 	j("Tell them about us. Tonight.");
 
 	Choose({
-		"Tonight?! Hell no.": Hiding_3,
+		"Tonight?! Heck no.": Hiding_3,
 		"Sigh... I'll try?": Hiding_3,
 		"I'll tell them I'm bi, but not about us.": Hiding_3
 	});
