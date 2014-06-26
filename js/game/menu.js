@@ -1,4 +1,6 @@
 function Start(){
+
+	$ = {};
 	
 	Scene("img/intro.png");
 
@@ -54,7 +56,7 @@ function Play(message){
 
 	N("You'll be playing as me, circa 2010.");
 	if(!$.asked_credits){
-		N("Because you skipped the Credits, my not-yet-legal name is Nicky Case. Just so you know.");
+		N("Because you skipped the Credits, my (not-yet-legal) name is Nicky Case. Just so you know.");
 		p("Shush.");
 	}
 

@@ -149,13 +149,15 @@ function Thanks(){
 	
 	n("So yeah! Thanks for taking me out to watch Inception!");
 	j("My pleasure, Nicky.");
-	n("Let's meet again tomorrow evening.");
+	j("You should parody Inception in that odd Flash game of yours!");
+	n("Mmm, maybe maybe.");
+	n("Let's meet again tomorrow evening!");
 
 	j("Although...");
 	n("Hope I can convince the parents to let me out overnight.");
 
 	j("I wish you didn't tell your mom and dad we were just studying, when we were actually at the cinema.");
-	n("I'll pretend we'll be cramming for the midter-- huh?");
+	n("I'll pretend we'll be cramming for the midterms all nigh-- huh?");
 
 	j("You can't keep hiding like this.");
 	n("Jack...");
@@ -255,7 +257,7 @@ function Hiding_2(message){
 	Choose({
 		"Tonight?! Heck no.": Hiding_3,
 		"Sigh... I'll try?": Hiding_3,
-		"I'll tell them I'm bi, but not about us.": Hiding_3
+		"I'll try hinting at it.": Hiding_3
 	});
 
 }

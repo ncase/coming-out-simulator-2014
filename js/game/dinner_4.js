@@ -5,8 +5,26 @@
 function Start_Dinner_4(){
 
 	m(". . .");
+	m("It's because your dad's almost never home, isn't it?");
+	m("Without a strong male role model, you become confused...");
+
+	Choose({
+		"Yeah, coz Dad's SUCH a great role model.": My_Fault,
+		"That's not how it works. I'd be bi anyway.": My_Fault,
+		"You know what? Maybe you're right.": My_Fault
+	});
+
+}
+
+function My_Fault(message){
+	
+	n(message);
+
+	m("Nick, I love you, no matter what.");
+
+	m(". . .");
 	m("This is all my fault...");
-	m("I told you to be careful around those kinds of people, but I told you too late.");
+	m("I told you to be careful around those kinds of people, but I told you too late...");
 	m("[sob]");
 	m("Oh Nick! My poor baby!");
 
@@ -15,7 +33,6 @@ function Start_Dinner_4(){
 		"Quit your fake crying.": Cry_2,
 		"[cry]": Cry_3
 	});
-
 }
 
 function Cry_1(message){

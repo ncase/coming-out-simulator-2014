@@ -9,7 +9,7 @@ function Start_Dinner_1(){
 	Choose({
 		"Moooom?": Waiting_1,
 		"Daaaaad?": Waiting_1,
-		"Hello, anyone?": Waiting_1
+		"Hello, anybody?": Waiting_1
 	});
 
 }
@@ -49,7 +49,7 @@ function Waiting_2(message){
 		"Cut the crying, cacophonous cat clock!": function(message){
 			n(message);
 			if($.im_a_poet){
-				m("Did you learn to be poetic from a friend?");
+				m("Did you learn poetry from a friend?");
 			}else{
 				m("Poetic.");
 			}

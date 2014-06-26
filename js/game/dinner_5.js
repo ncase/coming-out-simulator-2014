@@ -314,7 +314,8 @@ function Agreeable_Ending(){
 
 	$.father_oblivious = true;
 
-	f("For a moment there, Nick, I thought you'd been smoking pot with your hippie friend Jack, or something!");
+	f("For a moment there, Nick, I thought you'd been smoking pot with your hippie classmate Jack, or something!");
+	n(". . .");
 	f("So!");
 	f("Who wants to watch a movie this weekend? I hear Inception is good.");
 
@@ -426,14 +427,14 @@ function Argument_Ending(){
 	}
 	
 	f("Nick, you're changing schools.");
+	n(". . .");
 	m("huuu... huuu... huuu...");
 
-	f("Your mother and I will check your text and internet history frequently.");
+	f("Your mother and I will do random checks on your texts and emails.");
+	n(". . .");
 	m("owww... owww...");
 
 	f("I swear, if I have to pay Claire extra to make you realize you're straight, I will.");
-	f("And those expenses will be deducted from your allowance.");
-
 	n(". . .");
 
 	if($.crying=="anger"){
@@ -454,11 +455,9 @@ function Argument_Ending(){
 			n("Yes.");
 			n("FUCK this.");
 			n("And FUCK you.");
-			n("Fuck BOTH of you, you narcissistic pieces of SHI--");
-			f("[PUNCH]");
-
-			$.punched = true;
-			Dinner_Ending();
+			n("Fuck BOTH of you, you narcissistic slimy pieces of SHI--");
+			
+			Dinner_Ending_Punch();
 
 		},
 		"No. I accept my punishment.": function(message){
@@ -472,6 +471,7 @@ function Argument_Ending(){
 			f("Honey sweetie dear? Your cooking is shit.");
 			m(". . .");
 			m("BAWWWWW");
+			
 			Dinner_Ending();
 
 		},
@@ -486,14 +486,18 @@ function Argument_Ending(){
 			m("Please! It's my fault! Don't--");
 			f("Ice keeps the swelling down.");
 			m("DEAR!");
-			f("[PUNCH]");
-
-			$.punched = true;
-			Dinner_Ending();
+			
+			Dinner_Ending_Punch();
 
 		}
 	});
 
+}
+
+function Dinner_Ending_Punch(){
+	f("[PUNCH]");
+	$.punched = true;
+	Dinner_Ending();	
 }
 
 function Dinner_Ending(){
