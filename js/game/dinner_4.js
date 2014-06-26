@@ -49,7 +49,7 @@ function Cry_2(message){
 
 function Cry_3(message){
 
-	$.crying = "together";
+	$.crying = "mocking";
 
 	n("BAWWWWW");
 	m("huu... huu... huu...");
@@ -184,11 +184,8 @@ function Father_Soon(message){
 
 	m(". . .");
 	m("Your father will be back soon.");
-
-	n("We haven't even really eaten yet.");
 	n("The food's cold. Well, except for the spot you just uh, reversed, on.");
-
-	m("Your dad's late. Must be a stressful day at work.");
+	m("Your dad's late. Must have been a stressful day at work.");
 	m("So... please... when he's back...");
 	m("Promise me you'll keep all this secret?");
 	n(". . .");
@@ -203,7 +200,7 @@ function Father_Soon(message){
 			m("Don't tell him you're confused about your sexuality.");
 			break;
 		case "son":
-			m("Don't tell him you lied to us so you can... do things with Jack.");
+			m("Don't tell him you lied to us so you could... do things with Jack.");
 			break;
 	}
 
@@ -240,7 +237,7 @@ function Father_Soon(message){
 			Father_Soon_2();
 		},
 		"As long as you don't tell him, either.": function(message){
-			$.promise_silence = "tit_for_tat";
+			$.promise_silence = "tit for tat";
 			
 			n(message);
 			m("I won't.");

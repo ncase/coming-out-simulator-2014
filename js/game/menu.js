@@ -54,7 +54,7 @@ function Play(message){
 
 	N("You'll be playing as me, circa 2010.");
 	if(!$.asked_credits){
-		N("Because you skipped the Credits, my name's Nicky Case, just so you know.");
+		N("Because you skipped the Credits, my not-yet-legal name is Nicky Case. Just so you know.");
 		p("Shush.");
 	}
 
@@ -88,7 +88,7 @@ function Credits(message){
 	N("Hi, I'm Nicky Case.");
 	N("That's not my legal name, it's just my REAL name.");
 
-	p("That's weird, dude.");
+	p("That's totes weird, dude.");
 	if($.asked_about){
 		p("And like you just told me, this is your personal story?");
 	}else{

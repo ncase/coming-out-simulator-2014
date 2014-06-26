@@ -39,7 +39,7 @@ function Tutor(message){
 		m("She'll be tutoring you in "+$.studying_subject+".");
 	}
 
-	m("Her name is Claire. She's smart, pretty, and Chinese. She's about your age, too.");
+	m("Her name is Claire. She's smart, pretty, and Caucasian. She's about your age, too.");
 
 	Choose({
 		"Are you trying to stop me from seeing Jack?": Tutor_Seeing,
