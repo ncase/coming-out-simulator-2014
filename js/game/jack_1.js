@@ -256,8 +256,8 @@ function Hiding_2(message){
 
 	Choose({
 		"Tonight?! Heck no.": Hiding_3,
-		"Sigh... I'll try?": Hiding_3,
-		"I'll try hinting at it.": Hiding_3
+		"Sigh... I'll try my best.": Hiding_3,
+		"I'll just carefully hint at it.": Hiding_3
 	});
 
 }
@@ -293,6 +293,8 @@ function Hiding_3(message){
 	n("See ya.");
 	if(insult!=""){
 		n("You"+insult+".");
+	}else{
+		n("You goof.");
 	}
 
 	Jack_1_End();

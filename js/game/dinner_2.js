@@ -209,7 +209,6 @@ function Buddy_4(message){
 			n(message);
 			m("Yes!");
 			m("You suspect it, too!");
-			$.thinks_you_hate_gays = true;
 			Buddy_Choice();
 		},
 		"Don't say that about my friend!": function(message){
@@ -227,7 +226,6 @@ function Buddy_4(message){
 					n("I never said--");
 					m("And I'm just looking out for you! Because he acts like, you know...");
 					m("A gay!");
-					$.thinks_you_hate_gays = true;
 					Buddy_Choice();
 
 				});
@@ -239,7 +237,6 @@ function Buddy_4(message){
 				n("I never said--");
 				m("And I'm just looking out for you! Because he acts like, you know...");
 				m("A gay!");
-				$.thinks_you_hate_gays = true;
 				Buddy_Choice();
 
 			}
@@ -260,7 +257,6 @@ function Buddy_Choice(){
 	}
 	Choose({
 		"Ha, he sure acts gay. Luckily, he's not.": function(message){
-			$.thinks_you_hate_gays = true;
 			n(message);
 			m("See? You also think there's something not right about it.");
 			n("...sure.");

@@ -11,8 +11,12 @@ function Start(){
 
 	Choose({
 		"Let's play this thing!": Play,
-		"Hm, tell me more about this game.": About,
-		"Who are you? You made this game?": Credits
+		"Who are you? (Credits)": function(){
+			Credits("Who are you?");
+		},
+		"Hm, tell me more. (About This Game)": function(){
+			About("Hm, tell me more.");
+		}
 	});
 
 }
@@ -42,6 +46,45 @@ function Play(message){
 	p("That was FOUR years ago?!");
 	N("...to the evening that changed my life forever.");
 
+	N("Tell me, dear player, how do you think this all ends?");
+
+	Choose({
+		"With flowers and rainbows and gay unicorns?": function(message){
+			$.main_menu_convo_1 = 1;
+
+			p(message);
+			N("Yes. That is exactly how this game ends.");
+			p("Really?");
+			N("No.");
+			Play_2();
+		},
+		"Apparently, with you on a laptop.": function(message){
+			$.main_menu_convo_1 = 2;
+
+			p(message);
+			N("Hey, I'm busy transforming my personal coming-of-age story into this game you're playing right now.");
+			p("Naw, you're probably procrastinating.");
+			N("Look who's talking.");
+			p("Touché, douché.");
+			N("Anyway...");
+			Play_2();
+		},
+		"IT ALL ENDS IN BLOOD": function(message){
+			$.main_menu_convo_1 = 3;
+
+			p(message);
+			N("Uh, compared to that, I guess my story isn't that tragic.");
+			N("Although that's kind of a glass one-hundredths-full interpretation.");
+			p("blooooood.");
+			N("Anyway...");
+			Play_2();
+		}
+	});
+
+}
+
+function Play_2(){
+
 	if(!$.asked_about){
 		N("If you didn't skip the About This Game section, you'd know this is a very personal story.");
 		p("Shush.");
@@ -52,13 +95,57 @@ function Play(message){
 	N("It doesn't matter which is which.");
 	N("Not anymore.");
 
-	p("You're a bit of a downer, aren't you?");
+	Choose({
+		"You're a bit of a downer, aren't you?": function(message){
+			$.main_menu_convo_2 = 1;
+
+			p(message);
+			N("LIFE is a bit of a downer.");
+			p("So that's a yes.");
+			Play_3();
+		},
+		"How can I play not knowing the right answers?": function(message){
+			$.main_menu_convo_2 = 2;
+
+			p(message);
+			N("Exactly.");
+			p(". . .");
+			Play_3();
+		},
+		"This 'true' game is full of lies?": function(message){
+			$.main_menu_convo_2 = 3;
+
+			p(message);
+			N("Even if the dialogue was 100% accurate, it'd still be 100% lies.");
+			p(". . .");
+			Play_3();
+		}
+	});
+
+}
+
+function Play_3(){
 
 	N("You'll be playing as me, circa 2010.");
 	if(!$.asked_credits){
 		N("Because you skipped the Credits, my (not-yet-legal) name is Nicky Case. Just so you know.");
 		p("Shush.");
 	}
+
+	var whatISay;
+	switch($.main_menu_convo_1){
+		case 1: whatISay = "This game doesn't end with gay unicorns. "; break;
+		case 2: whatISay = "This game is a coming-out, a coming-of-age, a coming-to-terms. "; break;
+		case 3: whatISay = "This game ends not in blood, but in tears. "; break;
+	}
+	switch($.main_menu_convo_2){
+		case 1: whatISay += "Sorry for being a bit of a downer."; break;
+		case 2: whatISay += "And there are no right answers."; break;
+		case 3: whatISay += "And it's full of lies."; break;
+	}
+	N(whatISay);
+
+	p("Hey, I said that!");
 
 	N("When you play...");
 	N("Choose your words wisely.");
@@ -119,7 +206,9 @@ function Credits(message){
 	}else{
 		Choose({
 			"Speaking of that, can we play it now?": Play,
-			"And why did you make this game?": About
+			"Why'd you make this? (About This Game)": function(){
+				About("Why'd you make this?");
+			}
 		});
 	}
 
@@ -148,17 +237,10 @@ function About(message){
 		p("Aight, aight. Weirdo.");
 	}
 
-	N("I made this game for the Nar8 Game Jam.");
-	N("This jam finally gave me an excuse! And a deadline.");
-	
+	N("I made this game for the #Nar8 Game Jam. Gave me an excuse. And a deadline!");
 	p("You procrastinated until the last day to enter, didn't you.");
-
-	N("Ha ha ha ha ha");
-	p("Ha ha ha");
-	N("Ha.");
-	p("Yeah, you did.");
-
-	N("Oh, by the way, this game is uncopyrighted. Dedicated to the public domain.");
+	N("Yes.");
+	N("Also! This game is uncopyrighted. Dedicated to the public domain.");
 	N("I'm as open with my source code as I am with my sexuality.");
 
 	p("Ugh, that's a terrible pun.");
@@ -172,7 +254,9 @@ function About(message){
 	}else{
 		Choose({
 			"Bad puns aside, can we play now?": Play,
-			"So who ARE you, anyway?": Credits
+			"So who ARE you? (Credits)": function(){
+				Credits("So who ARE you?");
+			}
 		});
 	}
 

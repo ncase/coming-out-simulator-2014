@@ -185,10 +185,12 @@ function What_Now(){
 
 			if($.told_jack=="abuse"){
 				n("Like I promised. Like you made me promise.");
-			}
-			if($.told_jack=="school"){
+			}else if($.told_jack=="school"){
 				n("My current school, that is. I don't know how soon they'll be transferring me.");
+			}else{
+				n("At least they'll be someone else I can lash out on.");
 			}
+
 			What_Now_2();
 		},
 		"I'm going to sabotage my parents' plans.": function(message){
@@ -197,10 +199,12 @@ function What_Now(){
 			if($.told_jack=="texts"){
 				n("I'll set up a new email and virtual phone number to talk with you.");
 				n("This way they can't spy on our communications anymore.");
-			}
-			if($.told_jack=="girl"){
+			}else if($.told_jack=="girl"){
 				n("I'll tell Claire everything. With any luck, she'll help me fight back.");
+			}else{
+				n("I'll figure out a way, somehow...");
 			}
+
 			What_Now_2();
 		},
 		"I'm getting out of this house.": function(message){
@@ -231,7 +235,8 @@ function What_Now_2(){
 			j("No, no no...");
 			n("I can't do this to you, Jack. I can't pull you down with me.");
 			j("At least, don't type 'we can still be friends'.");
-			n("We can still be frie--");
+			n("we can still be frie");
+			n(". . .");
 			j("Because, of course we're friends. Of course we are.");
 			What_Now_3();
 		},
@@ -266,7 +271,7 @@ function What_Now_3(){
 	j("...never mind.");
 
 	Choose({
-		"I dunno if I can afford to love you anymore.": function(message){
+		"I don't know if I can afford to love you anymore.": function(message){
 			$.breaking_up_soon = true;
 			What_Now_4(message);
 		},
@@ -290,6 +295,8 @@ function What_Now_4(message){
 	if($.im_a_poet) insult+=" amateur poet";
 	if(insult!=""){
 		n("You"+insult+".");
+	}else{
+		n("You goof.");
 	}
 
 	The_Game_Ends();

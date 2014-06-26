@@ -186,7 +186,7 @@ function Threat_Tutor(){
 	Choose({
 		"Every day?! What about my friends?!":function(message){
 			n(message);
-			m("Don't worry, I'm your friend!");
+			m("Sweetie, I'm your friend!");
 			n(". . .");
 			m("Also Claire can be your friend. Maybe more than friends.");
 			n(". . .");
@@ -198,7 +198,7 @@ function Threat_Tutor(){
 			n(message);
 			m("Yes.");
 			n("Okay. Good that this is all settled now.");
-			m("Yes.");
+			m("...Yes.");
 			n(". . .");
 			m("Just... one more thing.");
 			Plot_Twist();
@@ -304,6 +304,7 @@ function Plot_Twist_2(){
 			n(message);
 			m("Like that 'Deception' movie?");
 			n("It's... it's 'Inception'.");
+			m("Don't talk back to me.");
 			Plot_Twist_3();
 		},
 		"I'm sorry. I'm so sorry.": function(message){

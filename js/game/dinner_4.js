@@ -4,7 +4,7 @@
 
 function Start_Dinner_4(){
 
-	m(". . .");
+	n(". . .");
 	m("It's because your dad's almost never home, isn't it?");
 	m("Without a strong male role model, you become confused...");
 
