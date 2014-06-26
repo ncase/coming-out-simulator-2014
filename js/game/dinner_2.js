@@ -103,14 +103,18 @@ function Start_Dinner_2_2(message){
 			Buddy_1(message);
 		},
 		"Mom, Jack is... more than a friend.": function(message){
+			
 			$.relationship = "best friend";
 			n(message);
+			
+			$.lying_about_hanging_out = true;
 			m("Oh, like best friends?");
 			n("Um. Well--");
 			m("So you're just hanging out, not studying.");
-			$.lying_about_hanging_out = true;
 			n("We ARE studying!");
 			m(". . .");
+			m("Alright, just don't lie to me.");
+			n("I'm not.");
 			Buddy_1_point_5();
 		},
 		"Well yeah, that's what good pals do.": function(message){
@@ -129,12 +133,19 @@ function Start_Dinner_2_2(message){
 
 function Buddy_1(message){
 	n(message);
-	$.lying_about_hanging_out = true;
-	m("Oh. So you're just hanging out, not studying.");
-	n("We ARE studying!");
-	m(". . .");
-	m("Okay. I'm just making sure.");
-	n("Of... what?");
+
+	if($.relationship!="study"){
+		$.lying_about_hanging_out = true;
+		m("Oh. So you're just hanging out, not studying.");
+		n("We ARE studying!");
+		m(". . .");
+		m("Alright, just don't lie to me.");
+		n("I'm not.");
+	}else{
+		m("Okay. I'm just making sure.");
+		n("Of... what?");
+	}
+
 	Buddy_1_point_5();
 }
 

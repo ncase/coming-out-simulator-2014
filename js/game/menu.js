@@ -86,7 +86,7 @@ function Credits(message){
 	
 	N("Ah, how rude of me! Let me introduce myself.");
 	N("Hi, I'm Nicky Case.");
-	N("That's not my legal name, it's just my real name.");
+	N("That's not my legal name, it's just my REAL name.");
 
 	p("That's weird, dude.");
 	if($.asked_about){

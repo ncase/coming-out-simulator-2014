@@ -235,6 +235,7 @@ function Threat_School(){
 			Plot_Twist();
 		},
 		"You can't do this to your CHILD!": function(message){
+			n(message);
 			m("Don't be so rude!");
 			m("I'm your MOTHER, it's my right to do whatever I want with you!");
 			n(". . .");
@@ -256,7 +257,6 @@ function Plot_Twist(){
 	m("Yesterday, when you were supposedly studying with Jack?");
 	m("I know you secretly went off to watch a movie.");
 	n(". . .");
-	n("Mom...");
 
 	Choose({
 		"Oh my god. You read my texts.": function(message){

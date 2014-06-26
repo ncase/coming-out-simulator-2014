@@ -41,7 +41,7 @@ function Inception_Dream(message){
 			$.im_a_poet = true;
 
 			n(message);
-			j("You are such a poet.");
+			j("Ah Nicky, you amateur poet.");
 			n("Get me some french breads and wine,");
 			n("Coz that's got to be the cheesiest thing I've ever said.");
 			j("Apologize for nothing.");
@@ -68,7 +68,7 @@ function Inception_Awake(message){
 	n(message);
 	n("Otherwise, the whole movie would've all just been a lie.");
 	n("What's the point of living a lie?");
-	j("You are such a poet.");
+	j("Ah Nicky, you amateur poet.");
 	j("I take it you liked the film?");
 
 	Choose({
@@ -226,7 +226,7 @@ function Hiding_2(message){
 	n(message);
 
 	if($.coming_out_readiness=="no"){
-		n("Again... Never, ever can they know.");
+		n("Again... They can never, ever know.");
 	}
 
 	j("You have trust issues.");
@@ -281,7 +281,7 @@ function Hiding_3(message){
 	n("Oh.");
 	j("Okay.");
 	if($.coming_out_readiness=="maybe"){
-		j("Hope that helped you be ready.");
+		j("Hope you changed your mind about being 'not ready to tell them yet'.");
 	}
 	j("Good luck. Text me in an hour.");
 
