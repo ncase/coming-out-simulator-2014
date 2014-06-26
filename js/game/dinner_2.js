@@ -3,34 +3,27 @@
 // 2) Suspecting Jack is gay
 // 3) Trying to get you a private tutor (threatening your relationship)
 
-// Needs: more inconsistency & lying caught in the 2nd section.
-
-//. . .
-
-// 4) Convinced Jack's negatively affecting you
-// 5) Crying and gaslighting (Reveal -- your phone's texts were read.)
-
-// What ARE you.
-// I'm straight.
-// I'm bisexual.
-// I'm your SON, goddammit.
-
-// 6) Choice - promising you NOT TO TELL YOUR DAD.
-// 7) Dad's back home (pretend normal)
-// 8) Mom/you break it.
-// 9) A heated argument with all your past lies/confessions piling up
-// 10) Something horrible. (Punch / Change schools / Private tutor)
-
-///////////////////////////////////
-////// 1) STUDYING AT Jack'S ///////
-///////////////////////////////////
-
 function Start_Dinner_2(){
 
-	Scene("img/dinner_2.png");
+	//Scene("img/dinner_2.png");
 
-	n("Hey mom.");
 	m("Hi sweetie.");
+
+	switch($.waiting_action){
+		case "eat":
+			m("Oh, you started eating without me. That's okay.");
+			n("...sure.");
+			break;
+		case "wait":
+			m("You could have started without me. No need to let your food get cold.");
+			n("...sure.");
+			break;
+		case "play":
+			m("It's immature to play with your food, you know.");
+			n("Yeah, yeah.");
+			break;
+	}
+
 	m("Your father's running late. He'll be joining us for dinner in an hour's time.");
 
 	Choose({

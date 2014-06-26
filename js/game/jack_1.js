@@ -293,9 +293,15 @@ function Hiding_3(message){
 		n("You"+insult+".");
 	}
 
+	Jack_1_End();
+
+}
+
+function Jack_1_End(){
+
 	Wait(1000);
 	Scene("");
 	Wait(1000);
-	Start_Dinner_2();
+	Start_Dinner_1();
 
 }

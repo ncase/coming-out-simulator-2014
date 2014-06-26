@@ -138,7 +138,8 @@ function Have_You_Had_Sex_2(){
 
 	n(". . .");
 	m("Which... one of you is the woman?");
-	n("Oh come on. That's like asking which chopstick is the spoo--");
+	n("OH COME ON!");
+	n("That's like asking which chopstick is the spoo--");
 	m("Which one of you?...");
 
 	Choose({

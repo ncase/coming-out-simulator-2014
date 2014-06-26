@@ -190,12 +190,12 @@ function Getting_A_Tutor(){
 			break;
 	}
 
-	f("Not talk about what?");
+	f("Talking about what?...");
 	f("I'm the head of this household. You two better not be hiding secrets from me.");
 	m("Oh... Nick just really, really likes Claire.");
 
 	Choose({
-		"What?! I've never even MET Claire!": function(message){
+		"What?! No I don't!": function(message){
 			n(message);
 			f("Don't be so shy about it.");
 			Getting_A_Tutor_2();
@@ -220,7 +220,7 @@ function Getting_A_Tutor_2(){
 	f("If I were your age, I ditch your mother and chase Claire, too! Haha!");
 
 	n("That's totes weird, dude.");
-	f("Talking back? Careful, I'll box your ears, boy! Haha!");
+	f("Talking back? Careful, I'll box your ears, boy!");
 
 	if($.changing_schools){
 		m("We were also thinking about changing schools for Nick.");
@@ -232,15 +232,12 @@ function Getting_A_Tutor_2(){
 		m("Claire will be tutoring Nick every day after school in "+$.studying_subject+".");
 	}
 
-	f("Is that the case?");
 	f("Nick, how does all this sound? Yes or no?");
-	m("He loves the idea!");
-	f("Shut up, Qi.");
-	f("I asked my son.");
+	m("He loves the ide--");
+	f("Shut up, Qi. I asked my son.");
 	m(". . .");
 
-	f("Well, Nick?");
-
+	f("Mister Nicklaus Liow.");
 	if($.changing_schools){
 		f("You want to change schools to chase your hot tutor girlfriend?");
 	}else{
@@ -249,7 +246,6 @@ function Getting_A_Tutor_2(){
 
 	n("It's complicated, I--");
 	f("No pansy middle-of-the-road answers.");
-	f("Mister. Nicklaus. Liow.");
 	f("Yes. Or. No.");
 
 	n(". . .");
@@ -263,18 +259,15 @@ function Getting_A_Tutor_2(){
 
 function Agree_With_Dad(){
 	
-	m(". . .");
-	n(". . .");
-	f(". . .");
 	n("...Yes.");
 
 	f("Hm.");
 	f("You two seem to have made this big life decision very eagerly!");
-	f("So eagerly, in fact, you made it in less than an hour, and tried to hide it from me.");
+	f("So eagerly, in fact, you made it in less than an hour, and tried to hide it from me. What a sudden change.");
 	m(". . .");
 	n(". . .");
 
-	f("Nick, you did something terrible to prompt this sudden change.");
+	f("Nick, you did something naughty, didn't you?");
 	f("What did you do.");
 
 	Choose({
@@ -321,21 +314,9 @@ function Agreeable_Ending(){
 
 	$.father_oblivious = true;
 
-	f("Well! I'm glad that's all good and settled, then.");
 	f("For a moment there, Nick, I thought you'd been smoking pot with your hippie friend Jack, or something!");
-	m("Jack <i>is</i> a bad influence on N...");
-	
-	n("Mom, shut up.");
-	f("Nick! That's no way to talk to your mother!");
-	m("Dear, can we...");
-	f("Qi, shut up.");
-
-	m(". . .");
-	n(". . .");
-
-	f("Enough with the sadness! Haha!");
-	f("Who wants to watch a movie this weekend?")
-	f("I heard Inception is pretty good.");
+	f("So!");
+	f("Who wants to watch a movie this weekend? I hear Inception is good.");
 
 	Choose({	
 		"Let's watch it! I haven't seen it yet.": function(message){
@@ -376,9 +357,6 @@ function Agreeable_Ending(){
 
 function Argue_With_Dad(){
 
-	m(". . .");
-	n(". . .");
-	f(". . .");
 	n("...No.");
 
 	f("Excuse me?");
@@ -395,7 +373,7 @@ function Argue_With_Dad(){
 			f("That kid chose his lifestyle, but I will not have it be yours, Nick.");
 			Argument_Ending();
 		},
-		"Mom hates him, because he happens to be gay.": function(message){
+		"Mom hates him, coz he happens to be gay.": function(message){
 
 			n(message);
 
@@ -407,7 +385,7 @@ function Argue_With_Dad(){
 			f("Jack chose that lifestyle, but I will not have it be yours, Nick.");
 			Argument_Ending();
 		},
-		"Mom hates him, because she THINKS he's gay.": function(message){
+		"Mom hates him, coz she THINKS he's gay.": function(message){
 
 			n(message);
 
@@ -425,6 +403,8 @@ function Argue_With_Dad(){
 
 function Argument_Ending(){
 
+	$.father_oblivious = false;
+
 	n(". . .");
 
 	if($.top_or_bottom=="top"){
@@ -441,7 +421,7 @@ function Argument_Ending(){
 			n(". . .");
 			break;
 		case "son":
-			n("Look, like I said before, I'm your SON, isn't that enou--");
+			n("Look, like I told Mom just now, I'm your SON, isn't that enou--");
 			break;
 	}
 	
@@ -458,11 +438,11 @@ function Argument_Ending(){
 
 	if($.crying=="anger"){
 		m("When I was crying earlier, he accused it of being fake!");
-		f("Shut up. We're not talking about you.");
+		f("Qi, shut up. We're not talking about you.");
 	}
 	if($.crying=="mocking"){
 		m("When I was crying earlier, he was mocking it!");
-		f("Shut up. We're not talking about you.");
+		f("Qi, shut up. We're not talking about you.");
 	}
 
 	f("So Nick.");
@@ -517,6 +497,11 @@ function Argument_Ending(){
 }
 
 function Dinner_Ending(){
-	p("[END!]");
+
+	Wait(1000);
+	Scene("");
+	Wait(1000);
+	Start_Jack_2();
+
 }
 

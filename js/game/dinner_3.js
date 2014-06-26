@@ -285,7 +285,7 @@ function Plot_Twist_2(){
 	m("Before dinner. I was in your room.");
 
 	// Dinner_1
-	m("You yelled out '"+"Mooooom?"+"' from downstairs, while I unlocked your phone...");
+	m("You yelled out '"+$.what_you_called_out+"' from downstairs, while I unlocked your phone...");
 	m("And read what you and Jack have been sending to each other.");
 	m("I'm your mother. I have the right.");
 
