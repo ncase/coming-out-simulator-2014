@@ -5,8 +5,6 @@
 
 function Start_Dinner_2(){
 
-	//Scene("img/dinner_2.png");
-
 	m("Hi sweetie.");
 
 	switch($.waiting_action){

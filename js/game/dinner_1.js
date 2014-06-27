@@ -1,6 +1,9 @@
 function Start_Dinner_1(){
 
-	Scene("img/dinner_2.png");
+	Scene({
+		image:"img/dinner_1.png",
+		clear:true
+	});
 
 	Wait(2000);
 	n("Where is everyone?...");
@@ -43,31 +46,42 @@ function Waiting_2(message){
 	n(message);
 	n(". . .");
 
-	// CAT CLOCK MEOWS
+	Scene({ image:"img/dinner_meow.png" });
+	Wait(1000);
 
 	Choose({
 		"Cut the crying, cacophonous cat clock!": function(message){
 			n(message);
+
+			Scene({ image:"img/dinner_2.png" });
 			if($.im_a_poet){
 				m("Did you learn poetry from a friend?");
 			}else{
 				m("Poetic.");
 			}
 			n("Oh, hey mom.");
+			
 			Waiting_End();
 		},
 		"Ugh, why did we get that thing?": function(message){
 			n(message);
+
+			Scene({ image:"img/dinner_2.png" });
 			m("Your grandfather gave it to us.");
 			n("Oh! Hey mom.");
+			
 			Waiting_End();
 		},
 		"Meow! Meow! Meow! Meow!": function(message){
+			
 			n("Meow.");
 			n("Meow!");
 			n("MEOW!");
+
+			Scene({ image:"img/dinner_2.png" });
 			m("Nick, what are you doing?...");
 			n("MEOOOhhhh didn't see you. Ahem. Hey mom.");
+
 			Waiting_End();
 		}
 	});

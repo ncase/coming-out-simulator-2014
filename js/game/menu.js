@@ -2,7 +2,9 @@ function Start(){
 
 	$ = {};
 	
-	Scene("img/intro.png");
+	Scene({
+		image:"img/intro.png"
+	});
 
 	N("<b>COMING OUT SIMULATOR 2014</b>");
 	N("A half-true game about half-truths.");
@@ -96,20 +98,20 @@ function Play_2(){
 	N("Not anymore.");
 
 	Choose({
-		"You're a bit of a downer, aren't you?": function(message){
-			$.main_menu_convo_2 = 1;
-
-			p(message);
-			N("LIFE is a bit of a downer.");
-			p("So that's a yes.");
-			Play_3();
-		},
 		"How can I win a game with no right answers?": function(message){
 			$.main_menu_convo_2 = 2;
 
 			p(message);
 			N("Exactly.");
 			p(". . .");
+			Play_3();
+		},
+		"You're a bit of a downer, aren't you?": function(message){
+			$.main_menu_convo_2 = 1;
+
+			p(message);
+			N("LIFE is a bit of a downer.");
+			p("So that's a yes.");
 			Play_3();
 		},
 		"This 'true' game is full of lies?": function(message){
@@ -157,7 +159,7 @@ function Play_3(){
 	N("Some things are hard not to remember.");
 	
 	Wait(1000);
-	Scene("");
+	Scene({blank:true, clear:true});
 	Wait(1000);
 	Start_Jack_1();
 

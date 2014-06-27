@@ -5,7 +5,10 @@
 
 function Start_Outro(){
 
-	Scene("img/intro.png");
+	Scene({
+		image:"img/intro.png",
+		clear:true
+	});
 
 	if($.breaking_up_soon){
 		N("And then we broke up three days later.");

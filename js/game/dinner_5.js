@@ -10,6 +10,9 @@ function Start_Dinner_5(){
 	
 	f("Hey Qiying! Hey Nick!");
 	f("I'm home!");
+	
+	Scene({ image:"img/dinner_5.png" });
+
 	m("Hi honey.");
 	n("Sup dad, how was your day?");
 
@@ -501,11 +504,9 @@ function Dinner_Ending_Punch(){
 }
 
 function Dinner_Ending(){
-
 	Wait(1000);
-	Scene("");
+	Scene({blank:true, clear:true});
 	Wait(1000);
 	Start_Jack_2();
-
 }
 

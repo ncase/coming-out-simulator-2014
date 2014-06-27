@@ -62,15 +62,22 @@ subscribe("/choose", function(choices){
 
 });
 
-subscribe("/scene", function(image){
-	backgroundDOM.style.backgroundImage = "url("+image+")";
+subscribe("/scene", function(options){
 
-	// Empty the dialogue
-	dialogueDOM.innerHTML = "";
-	dialogueDOM.style.top = "20px";
-	dialogueDOMOffset = 20;
+	// Image
+	if(options.image){
+		backgroundDOM.style.backgroundImage = "url("+options.image+")";
+	}
+	if(options.blank){
+		backgroundDOM.style.backgroundImage = "none";
+	}
 
-	// Empty the choices
-	choicesDOM.innerHTML = "";
+	// Empty the dialogue & choices
+	if(options.clear){
+		dialogueDOM.innerHTML = "";
+		dialogueDOM.style.top = "20px";
+		dialogueDOMOffset = 20;
+		choicesDOM.innerHTML = "";
+	}
 
 });

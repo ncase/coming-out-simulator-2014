@@ -76,9 +76,9 @@ function Choose(choices){
 	});
 };
 
-function Scene(image){
+function Scene(options){
 	queue(function(){
-		publish("/scene", [image]);
+		publish("/scene", [options]);
 	});
 }
 

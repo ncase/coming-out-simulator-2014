@@ -10,7 +10,10 @@
 
 function Start_Jack_2(){
 
-	Scene("img/jack_1.png");
+	Scene({
+		image:"img/jack_1.png",
+		clear:true
+	});
 
 	n("Hey Jack.");
 	if($.sadsack){
