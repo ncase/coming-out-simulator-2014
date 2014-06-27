@@ -11,7 +11,7 @@ function Start_Dinner_2(){
 
 	switch($.waiting_action){
 		case "eat":
-			m("Oh, you started eating without me. That's okay.");
+			m("Oh, you started eating without me. You're very impatient.");
 			n("...sure.");
 			break;
 		case "wait":

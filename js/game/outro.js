@@ -439,6 +439,8 @@ function Finale_3(message){
 
 	p(". . .");
 	N("I won.");
+	N(". . .");
+	N("I won.");
 
 	Choose({
 		"REPLAY?": Finale_4
