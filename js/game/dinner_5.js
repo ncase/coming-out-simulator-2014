@@ -17,10 +17,10 @@ function Start_Dinner_5(){
 	n("Sup dad, how was your day?");
 
 	f("Stayed overtime. Hopefully the boss will notice it before my Performance Review.");
-	f("Really, though, I was just playing Flash games all day. Haha!");
+	f("Really, though, I was just playing web games all day. Haha!");
 	n("Ha ha.");
 
-	f("Nick, why aren't <i>your</i> Flash games any fun?");
+	f("Nick, why aren't <i>your</i> web games any fun?");
 
 	Choose({
 		"I thought my games were fun...": function(message){

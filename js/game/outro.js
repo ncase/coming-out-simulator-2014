@@ -146,7 +146,7 @@ function Tell_Me_A_Lie(message){
 	if($.im_a_poet){
 		N("I roamed the Great White North. Supporting myself by writing amateur poetry for strangers.");
 	}else{
-		N("I roamed the Great White North. Supporting myself by making not-fun Flash games.");
+		N("I roamed the Great White North. Supporting myself by making not-fun web games.");
 	}
 	N("I ate flowers. Followed the rainbows. And befriended a homosexual unicorn.");
 	p(". . .");
@@ -219,7 +219,7 @@ function Tell_Me_A_Truth(message){
 	N("Here it goes.");
 	Is_Last_Story();
 
-	N("I took Jack's advice and parodied Inception in my 'odd Flash game', Reimagine :The Game:.");
+	N("I took Jack's advice and parodied Inception in my 'odd web game', Reimagine :The Game:.");
 	switch($.inception_answer){
 		case "awake": N("Didn't say that Cobbs was awake in the ending, though."); break;
 		case "dream": N("Didn't say that the movie was all just a dream, though."); break;
@@ -233,7 +233,7 @@ function Tell_Me_A_Truth(message){
 			$.outro_convo_truth = 1;
 			p(message);
 
-			N("Yup! I didn't work on those, though. Our team was making a Flash version of--");
+			N("Yup! I didn't work on those, though. Our team was making a web game version of--");
 			N("[LITERALLY CANNOT DISCLOSE]");
 			p("Oh.");
 			Tell_Me_A_Truth_2();
@@ -260,7 +260,6 @@ function Tell_Me_A_Truth(message){
 }
 function Tell_Me_A_Truth_2(){
 	
-	N("By the way, I don't do Flash games anymore. This game is in HTML5, just so you know.");
 	N("After EA, I went on to go indie.");
 	N("But I stayed in touch with friends at EA, and stayed in the Bay Area.");
 

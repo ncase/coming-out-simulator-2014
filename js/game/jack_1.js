@@ -152,7 +152,7 @@ function Thanks(){
 	
 	n("So yeah! Thanks for taking me out to watch Inception!");
 	j("My pleasure, Nicky.");
-	j("You should parody Inception in that odd Flash game of yours!");
+	j("You should parody Inception in that odd web game of yours!");
 	n("Mmm, maybe maybe.");
 	n("Let's meet again tomorrow evening!");
 
