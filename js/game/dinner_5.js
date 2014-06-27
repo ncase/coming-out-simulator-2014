@@ -148,7 +148,7 @@ function Casual_2(){
 			Getting_A_Tutor();
 
 		},
-		"DAD I'M BISEXUAL AND I'M BANGING JACK.": function(message){
+		"DAD I'M BISEXUAL AND BANGING JACK.": function(message){
 			$.tried_talking_about_it = true;
 
 			n("DAD I'M BI--");
@@ -323,8 +323,8 @@ function Agreeable_Ending(){
 		"Let's watch it! I haven't seen it yet.": function(message){
 			n(message);
 			f("Then it's a plan!");
-			f("Hey, Nick, you know who's acting in the movie?");
-			n("Um. Leo DiCapprio?");
+			f("Hey Nick, you know who's acting in the movie?");
+			n("Um. Leonardo DiCaprio?");
 			f("No no, Ellen Page.");
 			f("Doesn't Claire look a little bit like her?");
 			n("I guess.");

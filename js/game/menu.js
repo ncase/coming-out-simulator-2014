@@ -104,7 +104,7 @@ function Play_2(){
 			p("So that's a yes.");
 			Play_3();
 		},
-		"How can I play not knowing the right answers?": function(message){
+		"How can I win a game with no right answers?": function(message){
 			$.main_menu_convo_2 = 2;
 
 			p(message);
@@ -145,7 +145,7 @@ function Play_3(){
 	}
 	N(whatISay);
 
-	p("Hey, I said that!");
+	p("Hey, I just said that!");
 
 	N("When you play...");
 	N("Choose your words wisely.");

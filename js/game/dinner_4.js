@@ -109,7 +109,7 @@ function What_Are_You(){
 			m("...I know.");
 			m("I'm sorry Jack confused you.");
 			m("You're just going through a phase, it's okay.");
-			n("...");
+			n(". . .");
 			m("It's okay. It's okay...");
 			Have_You_Had_Sex();
 

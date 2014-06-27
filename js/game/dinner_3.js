@@ -69,7 +69,7 @@ function Tutor_Seeing(message){
 			n(message);
 			m("Okay. Just being clear about some things.");
 			n("Yeah.");
-			m("...");
+			m(". . .");
 			m("Claire's really cute.");
 			n("Sure.");
 			m("She has perky breasts.");
@@ -203,7 +203,7 @@ function Threat_Tutor(){
 			m("Just... one more thing.");
 			Plot_Twist();
 		},
-		"What if just don't study with Claire?": function(message){
+		"What if just DON'T study with Claire?": function(message){
 			n(message);
 			m("Well, if you also want to hang out with her, that's good too.");
 			m("Anything to make you more manly.");
@@ -297,7 +297,10 @@ function Plot_Twist_2(){
 	if($.hippies){
 		m("Talking about smoking marijuana?");
 	}
-	m("Making you lie to your own mother?");
+	if($.im_a_poet || $.hippies){
+		m("Helping you lie to your own mother?");
+		m("What else have you been doing behind my back?");
+	}
 
 	Choose({
 		"This has to be a bad dream.": function(message){

@@ -123,7 +123,7 @@ function What_Happened_Texts(message){
 
 function What_Happened_2(){
 	
-	n("And that's just one out of three things that happened.");
+	n("And that's just one out of three crappy things that happened.");
 	j("Nicky...");
 	j("I am truly, truly apologetic.");
 	j("This is my fault. I urged you to come out to your parents. Stupid me.");
@@ -180,19 +180,6 @@ function What_Now(){
 	j("What now?");
 
 	Choose({
-		"I'll visit the school counselor tomorrow.": function(message){
-			n(message);
-
-			if($.told_jack=="abuse"){
-				n("Like I promised. Like you made me promise.");
-			}else if($.told_jack=="school"){
-				n("My current school, that is. I don't know how soon they'll be transferring me.");
-			}else{
-				n("At least they'll be someone else I can lash out on.");
-			}
-
-			What_Now_2();
-		},
 		"I'm going to sabotage my parents' plans.": function(message){
 			n(message);
 
@@ -203,6 +190,19 @@ function What_Now(){
 				n("I'll tell Claire everything. With any luck, she'll help me fight back.");
 			}else{
 				n("I'll figure out a way, somehow...");
+			}
+
+			What_Now_2();
+		},
+		"I'll visit the school counselor tomorrow.": function(message){
+			n(message);
+
+			if($.told_jack=="abuse"){
+				n("Like I promised. Like you made me promise.");
+			}else if($.told_jack=="school"){
+				n("My current school, that is. I don't know how soon they'll be transferring me.");
+			}else{
+				n("At least they'll be someone else I can lash out on.");
 			}
 
 			What_Now_2();

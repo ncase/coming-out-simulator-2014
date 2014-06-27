@@ -65,10 +65,11 @@ function Closure(){
 	N("What do you think happened afterwards?");
 
 	if($.main_menu_convo_2==2){
-		N("Don't worry. Like we talked about in the intro, there are no right answers.");
+		N("Don't worry. Like we said in the Main Menu, there are no right answers.");
 	}
 
 	$.coming_out_stories_left = 3;
+	$.order_of_stories = [];
 
 	Choose({
 		"Dude, I dunno, just freaking tell me.": function(message){
@@ -132,6 +133,7 @@ function Is_Last_Story(){
 
 function Tell_Me_A_Lie(message){
 	$.told_story_lie = true;
+	$.order_of_stories.push("lie");
 
 	p(message);
 	N("Very well.");
@@ -145,7 +147,7 @@ function Tell_Me_A_Lie(message){
 	}
 	N("I ate flowers. Followed the rainbows. And befriended a homosexual unicorn.");
 	p(". . .");
-	N("Eventually I made it to Alaska, where I met a mid-30s bisexual couple named Bonnie & Clyde.");
+	N("Eventually I made it to Alaska, where I met an adult bisexual couple named Bonnie & Clyde.");
 	N("Bonnie was a mid-30s cougar, and Clyde was an early-40s manther.");
 
 	// FAMILY WITH BENEFITS
@@ -176,7 +178,7 @@ function Tell_Me_A_Lie_2(){
 	
 	N("They took me in as their foster child, and I was their full-time boytoy.");
 
-	if($.outro_convo_lie){
+	if($.outro_convo_lie==1){
 		p("...Thanks again to your, uh, flexibility.");
 	}
 
@@ -208,6 +210,7 @@ function Tell_Me_A_Lie_2(){
 
 function Tell_Me_A_Truth(message){
 	$.told_story_truth = true;
+	$.order_of_stories.push("truth");
 
 	p(message);
 	N("Here it goes.");
@@ -278,6 +281,7 @@ function Tell_Me_A_Truth_2(){
 
 function Tell_Me_A_Half_Truth(message){
 	$.told_story_half_truth = true;
+	$.order_of_stories.push("half-truth");
 
 	p(message);
 	N("As you wish.");
@@ -288,7 +292,7 @@ function Tell_Me_A_Half_Truth(message){
 
 	p("What a twist!");
 
-	N("Claire was insecure about her identity, like me.");
+	N("Claire was insecure about her sexual orientation, like me.");
 	N("We were both somewhat inexperienced. Claire's only been with women, and I've only been with Jack.");
 
 	// CLAIRE AND I HELPED EACH OTHER EXPLORE OURSELVES, LESS GUILT, MORE EXPERIENCE.
@@ -350,6 +354,20 @@ function Tell_Me_A_Half_Truth_2(){
 function Finale_1(){
 	
 	N("And that's the last of the post-coming-out stories!");
+
+	N("Dear player, I couldn't help but notice...");
+	if($.order_of_stories[0]=="truth"){
+		N("You went straight for the Truth first.");
+	}else if($.order_of_stories[2]=="truth"){
+		N("You saved the Truth for last.");
+	}else if($.order_of_stories[0]=="lie"){
+		N("You wanted to hear the Lie first.");
+	}else{
+		N("You saved the Lie for last.");
+	}
+	N("What does that say about you?...");
+	p(". . .");
+
 	p("You know... usually when a game gives you multiple endings, they don't do them ALL AT ONCE.");
 	N("Hah! You thought these were ENDINGS?");
 
@@ -420,9 +438,6 @@ function Finale_3(message){
 	N("Where I played against people who should have been on my side...");
 
 	p(". . .");
-
-	N("I won!");
-	N(". . .");
 	N("I won.");
 
 	Choose({
