@@ -304,6 +304,6 @@ function What_Now_4(message){
 }
 
 function The_Game_Ends(){
-	p("{END}");
+	Start_Outro();
 }
 
