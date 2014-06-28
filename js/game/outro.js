@@ -229,13 +229,13 @@ function Tell_Me_A_Truth(message){
 	N("A few months later, I landed an internship at Electronic Arts in the Bay Area. Far away from my family in Canada.");
 
 	Choose({
-		"Oh, I love EA! They make The Sims, right?": function(message){
-			$.outro_convo_truth = 1;
+		"Eww, Electronic Arts...?": function(message){
+			$.outro_convo_truth = 3;
 			p(message);
 
-			N("Yup! I didn't work on those, though. Our team was making a web game version of--");
-			N("[LITERALLY CANNOT DISCLOSE]");
-			p("Oh.");
+			N("Yeah, I know, I know.");
+			N("I'm now repenting for my sins by making artsy-fartsy indie games like this one.");
+			p("Repent harder, dammit.");
 			Tell_Me_A_Truth_2();
 		},
 		"And the Bay Area is very LGBT friendly.": function(message){
@@ -246,13 +246,13 @@ function Tell_Me_A_Truth(message){
 			p("Uh.. nobody calls it that.");
 			Tell_Me_A_Truth_2();
 		},
-		"Eww, Electronic Arts...?": function(message){
-			$.outro_convo_truth = 3;
+		"Oh, I love EA! They make The Sims, right?": function(message){
+			$.outro_convo_truth = 1;
 			p(message);
 
-			N("Yeah, I know, I know.");
-			N("I'm now repenting for my sins by making artsy-fartsy indie games like this one.");
-			p("Repent harder, dammit.");
+			N("Yup! I didn't work on those, though. Our team was making a web game version of--");
+			N("[LITERALLY CANNOT DISCLOSE]");
+			p("Oh.");
 			Tell_Me_A_Truth_2();
 		}
 	});

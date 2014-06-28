@@ -240,6 +240,8 @@ function Getting_A_Tutor_2(){
 	f("Shut up, Qi. I asked my son.");
 	m(". . .");
 
+	Show("dad","dad_threat");
+
 	f("Mister Nicklaus Liow.");
 	if($.changing_schools){
 		f("You want to change schools to chase your hot tutor girlfriend?");
@@ -280,6 +282,9 @@ function Agree_With_Dad(){
 
 			f("...Oh.");
 			f("Yeah, you need to get your grades back up.");
+
+			Show("dad","dad_serious");
+
 			f("Or you'll be stuck in a teaching job like your mother! Haha!");
 			n(". . .");
 			Agreeable_Ending();
@@ -304,6 +309,9 @@ function Agree_With_Dad(){
 			m("...Dear!");
 			f("Wait, uh, you didn't get her pregnant, did you?");
 			n("No. I'm not stupid.");
+			
+			Show("dad","dad_serious");
+
 			f("Good. Otherwise you'd be stuck for the next two decades raising a kid, like me! Haha!");
 			n("Ha ha.");
 			Agreeable_Ending();
@@ -469,10 +477,19 @@ function Argument_Ending(){
 			f("Good. At least you're taking this like a man.");
 			n(". . .");
 
+			Show("dad","dad_serious");
+
 			m("sniff...");
 			f("I'm going out to the bar, and getting something actually edible to eat.");
+
+			Show("dad",null);
+
 			f("Honey sweetie dear? Your cooking is shit.");
+
 			m(". . .");
+			
+			Show("mom","mom_cry");
+
 			m("BAWWWWW");
 			
 			Dinner_Ending();
@@ -501,14 +518,15 @@ function Dinner_Ending_Punch(){
 
 	Show("dad",null);
 	Show("nicky","dinner_nicky_punched");
-	Wait(500);
 	
 	$.punched = true;
 	Dinner_Ending();	
+	
 }
 
 function Dinner_Ending(){
 
+	Wait(1000);
 	Show("clock","clock_meowing");
 	Show("clock_time","clock_2000");
 	Wait(1000);

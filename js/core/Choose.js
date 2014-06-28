@@ -17,7 +17,7 @@ function step(timestamp) {
 	// Do the next thing in the queue
 	if(_queue.length>0){
 		ticker += 1000/60; // HARD CODED. So it pauses when you're away.
-		if(ticker > _queue[0].time){
+		while(_queue.length>0 && ticker>_queue[0].time){ // For instantaneous events, like Show.
 			var item = _queue.shift();
 			item.callback();
 		}

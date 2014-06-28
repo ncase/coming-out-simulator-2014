@@ -14,6 +14,7 @@ Still("mom_cry","img/stills/mom_cry.png");
 Still("mom_vomit","img/stills/mom_vomit.png");
 
 Still("dad_serious","img/stills/dad_serious.png");
+Still("dad_threat","img/stills/dad_threat.png");
 
 Still("clock_1855","img/stills/clock_1855.png");
 Still("clock_1900","img/stills/clock_1900.png");
