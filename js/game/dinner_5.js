@@ -52,6 +52,8 @@ function Casual(){
 	f("Hey Qi, what's that sauce on your plate?");
 	f("Uh...");
 
+	Show("clock_time","clock_1950");
+
 	Choose({
 		"It's vomit.": function(message){
 			
@@ -506,7 +508,13 @@ function Dinner_Ending_Punch(){
 }
 
 function Dinner_Ending(){
+
+	Show("clock","clock_meowing");
+	Show("clock_time","clock_2000");
+	Wait(1000);
+
 	Clear();
 	Start_Jack_2();
+
 }
 

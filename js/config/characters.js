@@ -5,7 +5,7 @@ N = new Character({ align:"left", background:"#FFF", color:"#000" });
 p = new Character({ align:"right", background:"#333", color:"#bbb" });
 
 // Nicky in the past, the one you can play
-n = new Character({ align:"right", background:"#4099FF" });
+n = new Character({ align:"right", background:"#79B8FE" });
 
 // Mother character
 m = new Character({ align:"left", background:"#FFF" });

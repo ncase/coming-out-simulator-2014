@@ -258,6 +258,8 @@ function Plot_Twist(){
 	m("I know you secretly went off to watch a movie.");
 	n(". . .");
 
+	Show("clock_time","clock_1920");
+
 	Choose({
 		"Oh my god. You read my texts.": function(message){
 			n(message);

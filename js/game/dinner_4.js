@@ -22,6 +22,8 @@ function My_Fault(message){
 
 	m("Nick, I love you, no matter what.");
 
+	Show("clock_time","clock_1930");
+
 	m(". . .");
 	m("This is all my fault...");
 	m("I told you to be careful around those kinds of people, but I told you too late...");
@@ -191,6 +193,7 @@ function Have_You_Had_Sex_2(){
 
 function Throw_Up(){
 
+	Show("clock_time","clock_1940");
 	Show("mom","mom_vomit");
 	Show("table","dinner_table_2");
 	Wait(1000);

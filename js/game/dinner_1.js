@@ -4,6 +4,7 @@ function Start_Dinner_1(){
 
 	Show("background","dinner");
 	Show("clock","clock_ticking",{x:155,y:294});
+	Show("clock_time","clock_1855",{x:155+5,y:294+37});
 	Show("nicky","dinner_nicky_sit",{x:0,y:300});
 	Show("dad",null,{x:0,y:300});
 	Show("mom",null,{x:0,y:300});
@@ -53,6 +54,7 @@ function Waiting_2(message){
 	n(". . .");
 
 	Show("clock","clock_meowing");
+	Show("clock_time","clock_1900");
 	Wait(1000);
 
 	Choose({

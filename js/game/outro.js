@@ -5,6 +5,9 @@
 
 function Start_Outro(){
 
+	queue(function(){
+		publish("clear",[]);
+	},0);
 	Show("background","coffeehouse");
 
 	if($.breaking_up_soon){

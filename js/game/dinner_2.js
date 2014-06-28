@@ -288,10 +288,13 @@ function Buddy_Choice(){
 
 
 function Buddy_Aftermath(){
+
 	m("Don't get me wrong.");
 	m("I'm not saying those kind of people are bad!");
 	m("I just think... you should be careful around one of them.");
 	m("Jack might, you know, try to recruit you.");
+
+	Show("clock_time","clock_1910");
 
 	Choose({
 		"what.": Buddy_Aftermath_2,
