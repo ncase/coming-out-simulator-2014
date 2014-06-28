@@ -6,6 +6,8 @@ Still("dinner_table","img/stills/dinner_table.png");
 Still("dinner_table_2","img/stills/dinner_table_2.png");
 
 Still("dinner_nicky_sit","img/stills/dinner_nicky_sit.png");
+Still("dinner_nicky_defiant","img/stills/dinner_nicky_defiant.png");
+Still("dinner_nicky_outrage","img/stills/dinner_nicky_outrage.png");
 Still("dinner_nicky_punched","img/stills/dinner_nicky_punched.png");
 
 Still("mom_stand","img/stills/mom_stand.png");

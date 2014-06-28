@@ -154,7 +154,10 @@ function Casual_2(){
 		"DAD I'M BISEXUAL AND BANGING JACK.": function(message){
 			$.tried_talking_about_it = true;
 
+			Show("nicky","dinner_nick_outrage");
 			n("DAD I'M BI--");
+			Show("nicky","dinner_nick_sit");
+
 			m("BICYCLING to school every day starting next week.");
 			f("Oh good!");
 			f("You could certainly lose some weight, or else how will you get a girlfriend?");
@@ -174,6 +177,8 @@ function Getting_A_Tutor(){
 	f("Oh! Is this the Claire kid?");
 
 	// Oh dang!
+	Show("nicky","dinner_nick_defiant");
+
 	switch($.promise_silence){
 		case "yes":
 			n("Mom, we both promised we wouldn't talk about this...");
@@ -294,6 +299,7 @@ function Agree_With_Dad(){
 			
 			n(message);
 			
+			Show("mom","mom_cry");
 			m("[sob]");
 			f(". . .");
 			Argument_Ending();
@@ -326,6 +332,8 @@ function Agreeable_Ending(){
 	$.father_oblivious = true;
 
 	f("For a moment there, Nick, I thought you'd been smoking pot with your hippie classmate Jack, or something!");
+
+	Show("nicky","dinner_nick_sit");
 	n(". . .");
 	f("So!");
 	f("Who wants to watch a movie this weekend? I hear Inception is good.");
@@ -380,7 +388,10 @@ function Argue_With_Dad(){
 		"My boyfriend.": function(message){
 			
 			n(message);
+
+			Show("mom","mom_cry");
 			m("[sob]");
+
 			m("Jack did this to our son!");
 			f("That kid chose his lifestyle, but I will not have it be yours, Nick.");
 			Argument_Ending();
@@ -389,7 +400,9 @@ function Argue_With_Dad(){
 
 			n(message);
 
+			Show("mom","mom_cry");
 			m("[sob]");
+
 			f("You made your mother cry.");
 			if($.hippies){
 				m("And his parents are drug addicts!");
@@ -401,7 +414,9 @@ function Argue_With_Dad(){
 
 			n(message);
 
+			Show("mom","mom_cry");
 			m("[sob]");
+
 			m("Jack IS gay!");
 			if($.hippies){
 				m("And his parents are drug addicts!");
@@ -448,6 +463,7 @@ function Argument_Ending(){
 	f("I swear, if I have to pay Claire extra to make you realize you're straight, I will.");
 	n(". . .");
 
+	Show("mom","mom_sit");
 	if($.crying=="anger"){
 		m("When I was crying earlier, he accused it of being fake!");
 		f("Qi, shut up. We're not talking about you.");
@@ -466,6 +482,8 @@ function Argument_Ending(){
 			n("Yes.");
 			n("FUCK this.");
 			n("And FUCK you.");
+			
+			Show("nicky","dinner_nick_outrage");
 			n("Fuck BOTH of you, you narcissistic slimy pieces of SHI--");
 			
 			Dinner_Ending_Punch();

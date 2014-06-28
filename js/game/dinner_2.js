@@ -295,6 +295,7 @@ function Buddy_Aftermath(){
 	m("Jack might, you know, try to recruit you.");
 
 	Show("clock_time","clock_1910");
+	Show("nicky","dinner_nick_defiant");
 
 	Choose({
 		"what.": Buddy_Aftermath_2,
@@ -313,6 +314,8 @@ function Buddy_Aftermath_2(message){
 	n("No, mom, stop doing th--");
 	m("Let's go back to talking about your grades.");
 	m("Now, what did you say you were studying tomorrow?");
+
+	Show("nicky","dinner_nicky_sit");
 	n(". . .");
 	n("Errrmmmmm...");
 

@@ -117,6 +117,9 @@ function Tutor_Matchmake(message){
 
 			n(message);
 			m("Um. Bi?...");
+
+			Show("nicky","dinner_nick_defiant");
+
 			n("Yes. As in BISEXUAL.");
 			n("As in I AM SEXUALLY ATTRACTED TO BOTH MEN AND WOMEN.");
 			m(". . .");
@@ -180,6 +183,8 @@ function Tutor_Forget(message){
 
 function Threat_Tutor(){
 	
+	Show("nicky","dinner_nick_defiant");
+	
 	n(". . .");
 	m("Claire will be tutoring you every day after school, starting tomorrow.");
 
@@ -221,6 +226,9 @@ function Threat_School(){
 	$.changing_schools = true;
 	
 	m("You're changing schools.");
+
+	Show("nicky","dinner_nick_outrage");
+
 	n("WHAT?!");
 	m("I think it's not just Jack, it's the entire school that's a bad influence on you.");
 	n("ARE YOU SERIOUS.");
@@ -256,6 +264,8 @@ function Plot_Twist(){
 
 	m("Yesterday, when you were supposedly studying with Jack?");
 	m("I know you secretly went off to watch a movie.");
+
+	Show("nicky","dinner_nick_sit");
 	n(". . .");
 
 	Show("clock_time","clock_1920");
