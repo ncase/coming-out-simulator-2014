@@ -33,7 +33,7 @@ function My_Fault(message){
 	m("[sob]");
 	m("Oh Nick! My poor baby!");
 
-	Show("nicky","dinner_nick_sit");
+	Show("nicky","dinner_nicky_sit");
 
 	Choose({
 		"Mom... please don't cry...": Cry_1,
@@ -59,7 +59,7 @@ function Cry_1(message){
 function Cry_2(message){
 
 	$.crying = "anger";
-	Show("nicky","dinner_nick_defiant");
+	Show("nicky","dinner_nicky_defiant");
 
 	n(message);
 	m("huu... huu... huu...");
@@ -75,7 +75,7 @@ function Cry_2(message){
 function Cry_3(message){
 
 	$.crying = "mocking";
-	Show("nicky","dinner_nick_outrage");
+	Show("nicky","dinner_nicky_outrage");
 
 	n("BAWWWWW");
 	m("huu... huu... huu...");
@@ -94,7 +94,7 @@ function What_Are_You(){
 	m("Nick... what are you?");
 	n("Excuse me?");
 
-	Show("nicky","dinner_nick_sit");
+	Show("nicky","dinner_nicky_sit");
 
 	Show("mom","mom_sit");
 	m("What <i>are</i> you?");
@@ -170,13 +170,13 @@ function Have_You_Had_Sex_2(){
 	n(". . .");
 	m("Which... one of you is the woman?");
 
-	Show("nicky","dinner_nick_outrage");
+	Show("nicky","dinner_nicky_outrage");
 
 	n("OH COME ON!");
 	n("That's like asking which chopstick is the spoo--");
 	m("Which one of you?...");
 
-	Show("nicky","dinner_nick_defiant");
+	Show("nicky","dinner_nicky_defiant");
 
 	Choose({
 		"I'm usually the bottom.":function(message){
@@ -293,6 +293,6 @@ function Father_Soon(message){
 }
 
 function Father_Soon_2(){
-	Show("nicky","dinner_nick_sit");
+	Show("nicky","dinner_nicky_sit");
 	Start_Dinner_5();
 }

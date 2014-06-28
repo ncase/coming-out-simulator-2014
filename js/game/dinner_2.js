@@ -295,7 +295,7 @@ function Buddy_Aftermath(){
 	m("Jack might, you know, try to recruit you.");
 
 	Show("clock_time","clock_1910");
-	Show("nicky","dinner_nick_defiant");
+	Show("nicky","dinner_nicky_defiant");
 
 	Choose({
 		"what.": Buddy_Aftermath_2,

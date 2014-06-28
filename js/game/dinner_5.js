@@ -154,9 +154,9 @@ function Casual_2(){
 		"DAD I'M BISEXUAL AND BANGING JACK.": function(message){
 			$.tried_talking_about_it = true;
 
-			Show("nicky","dinner_nick_outrage");
+			Show("nicky","dinner_nicky_outrage");
 			n("DAD I'M BI--");
-			Show("nicky","dinner_nick_sit");
+			Show("nicky","dinner_nicky_sit");
 
 			m("BICYCLING to school every day starting next week.");
 			f("Oh good!");
@@ -177,7 +177,7 @@ function Getting_A_Tutor(){
 	f("Oh! Is this the Claire kid?");
 
 	// Oh dang!
-	Show("nicky","dinner_nick_defiant");
+	Show("nicky","dinner_nicky_defiant");
 
 	switch($.promise_silence){
 		case "yes":
@@ -333,7 +333,7 @@ function Agreeable_Ending(){
 
 	f("For a moment there, Nick, I thought you'd been smoking pot with your hippie classmate Jack, or something!");
 
-	Show("nicky","dinner_nick_sit");
+	Show("nicky","dinner_nicky_sit");
 	n(". . .");
 	f("So!");
 	f("Who wants to watch a movie this weekend? I hear Inception is good.");
@@ -483,7 +483,7 @@ function Argument_Ending(){
 			n("FUCK this.");
 			n("And FUCK you.");
 			
-			Show("nicky","dinner_nick_outrage");
+			Show("nicky","dinner_nicky_outrage");
 			n("Fuck BOTH of you, you narcissistic slimy pieces of SHI--");
 			
 			Dinner_Ending_Punch();
@@ -535,7 +535,10 @@ function Argument_Ending(){
 function Dinner_Ending_Punch(){
 
 	Show("dad",null);
+	
+	Show("mom","mom_cry");
 	Show("nicky","dinner_nicky_punched");
+	Show("dinner_punch_arm","dinner_punch_arm",{x:0,y:300});
 	
 	$.punched = true;
 	Dinner_Ending();	
