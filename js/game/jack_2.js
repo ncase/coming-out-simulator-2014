@@ -10,10 +10,7 @@
 
 function Start_Jack_2(){
 
-	Scene({
-		image:"img/jack_1.png",
-		clear:true
-	});
+	Show("background","bedroom");
 
 	n("Hey Jack.");
 	if($.sadsack){

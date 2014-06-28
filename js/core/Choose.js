@@ -81,12 +81,6 @@ function Choose(choices){
 	});
 };
 
-function Scene(options){
-	queue(function(){
-		publish("scene", [options]);
-	});
-}
-
 function Show(){
 	var args = arguments;
 	queue(function(){
@@ -96,6 +90,13 @@ function Show(){
 
 function Wait(duration){
 	queue(function(){},duration);
+}
+function Clear(duration){
+	Wait(1000);
+	queue(function(){
+		publish("clear",[]);
+	},duration);
+	Wait(1000);
 }
 
 var _artPromises = [];

@@ -83,7 +83,7 @@ function Casual(){
 
 			$.grounded = 0;
 			m("Nick...");
-			f("Again, don't mind if I do!");
+			f("Don't mind if I do!");
 			f("[eats a spoonful]");
 			f(". . .");
 			n(". . .");
@@ -506,9 +506,7 @@ function Dinner_Ending_Punch(){
 }
 
 function Dinner_Ending(){
-	Wait(1000);
-	Scene({blank:true, clear:true});
-	Wait(1000);
+	Clear();
 	Start_Jack_2();
 }
 

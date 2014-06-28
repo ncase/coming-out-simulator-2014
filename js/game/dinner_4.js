@@ -193,7 +193,7 @@ function Throw_Up(){
 
 	Show("mom","mom_vomit");
 	Show("table","dinner_table_2");
-	m("[PROJECTILE VOMIT]");
+	Wait(1000);
 
 	Choose({
 		"what.": Father_Soon,

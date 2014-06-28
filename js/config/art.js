@@ -1,3 +1,5 @@
+Background("coffeehouse","img/backgrounds/coffeehouse.png");
+Background("bedroom","img/backgrounds/bedroom.png");
 Background("dinner","img/backgrounds/dinner.png");
 
 Still("dinner_table","img/stills/dinner_table.png");

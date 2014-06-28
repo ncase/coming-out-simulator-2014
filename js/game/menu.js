@@ -2,9 +2,7 @@ function Start(){
 
 	$ = {};
 	
-	Scene({
-		image:"img/intro.png"
-	});
+	Show("background","coffeehouse");
 
 	N("<b>COMING OUT SIMULATOR 2014</b>");
 	N("A half-true game about half-truths.");
@@ -158,9 +156,7 @@ function Play_3(){
 	N(". . .");
 	N("Some things are hard not to remember.");
 	
-	Wait(1000);
-	Scene({blank:true, clear:true});
-	Wait(1000);
+	Clear();
 	Start_Jack_1();
 
 }

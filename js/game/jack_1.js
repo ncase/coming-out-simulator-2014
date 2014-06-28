@@ -8,10 +8,7 @@
 
 function Start_Jack_1(){
 	
-	Scene({
-		image:"img/jack_1.png",
-		clear:true
-	});
+	Show("background","bedroom");
 
 	j("And when he simply announces,");
 	j("'I bought the airline.'");
@@ -305,8 +302,6 @@ function Hiding_3(message){
 }
 
 function Jack_1_End(){
-	Wait(1000);
-	Scene({blank:true, clear:true});
-	Wait(1000);
+	Clear();
 	Start_Dinner_1();
 }

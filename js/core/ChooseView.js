@@ -62,26 +62,13 @@ subscribe("choose", function(choices){
 
 });
 
-subscribe("scene", function(options){
-
-	// Image
+subscribe("clear", function(){
+	_sceneItems = {};
 	backgroundDOM.innerHTML = "";
-
-	if(options.image){
-		backgroundDOM.style.backgroundImage = "url("+options.image+")";
-	}
-	if(options.blank){
-		backgroundDOM.style.backgroundImage = "none";
-	}
-
-	// Empty the dialogue & choices
-	if(options.clear){
-		dialogueDOM.innerHTML = "";
-		dialogueDOM.style.top = "20px";
-		dialogueDOMOffset = 20;
-		choicesDOM.innerHTML = "";
-	}
-
+	dialogueDOM.innerHTML = "";
+	dialogueDOM.style.top = "20px";
+	dialogueDOMOffset = 20;
+	choicesDOM.innerHTML = "";
 });
 
 var _sceneItems = {};

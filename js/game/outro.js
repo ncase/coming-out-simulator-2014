@@ -5,10 +5,7 @@
 
 function Start_Outro(){
 
-	Scene({
-		image:"img/intro.png",
-		clear:true
-	});
+	Show("background","coffeehouse");
 
 	if($.breaking_up_soon){
 		N("And then we broke up three days later.");

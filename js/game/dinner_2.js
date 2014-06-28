@@ -42,7 +42,7 @@ function Start_Dinner_2(){
 			m("So, what's your plans for tomorrow?");
 			Start_Dinner_2_1();
 		},
-		"There's something I want to ask just you first.": function(message){
+		"There's something I need to tell just you first.": function(message){
 			n(message);
 			m("Hold on Nick, I haven't asked about your day yet!");
 			n("Today was fine.");
