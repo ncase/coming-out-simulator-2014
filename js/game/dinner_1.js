@@ -1,9 +1,15 @@
 function Start_Dinner_1(){
 
-	Scene({
-		image:"img/dinner_1.png",
-		clear:true
-	});
+	/////// SET UP SCENE ////////
+
+	Show("background","dinner");
+	Show("clock","clock_ticking",{x:155,y:294});
+	Show("nicky","dinner_nicky_sit",{x:0,y:300});
+	Show("dad",null,{x:0,y:300});
+	Show("mom",null,{x:0,y:300});
+	Show("table","dinner_table",{x:0,y:420});
+
+	////////////////////////////
 
 	Wait(2000);
 	n("Where is everyone?...");
@@ -46,14 +52,16 @@ function Waiting_2(message){
 	n(message);
 	n(". . .");
 
-	Scene({ image:"img/dinner_meow.png" });
+	Show("clock","clock_meowing");
 	Wait(1000);
 
 	Choose({
 		"Cut the crying, cacophonous cat clock!": function(message){
 			n(message);
 
-			Scene({ image:"img/dinner_2.png" });
+			Show("mom","mom_stand");
+			Show("clock","clock_ticking");
+
 			if($.im_a_poet){
 				m("Did you learn poetry from a friend?");
 			}else{
@@ -66,7 +74,9 @@ function Waiting_2(message){
 		"Ugh, why did we get that thing?": function(message){
 			n(message);
 
-			Scene({ image:"img/dinner_2.png" });
+			Show("mom","mom_stand");
+			Show("clock","clock_ticking");
+
 			m("Your grandfather gave it to us.");
 			n("Oh! Hey mom.");
 			
@@ -78,7 +88,9 @@ function Waiting_2(message){
 			n("Meow!");
 			n("MEOW!");
 
-			Scene({ image:"img/dinner_2.png" });
+			Show("mom","mom_stand");
+			Show("clock","clock_ticking");
+
 			m("Nick, what are you doing?...");
 			n("MEOOOhhhh didn't see you. Ahem. Hey mom.");
 

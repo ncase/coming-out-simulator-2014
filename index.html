@@ -13,14 +13,16 @@
 	</div>
 </body>
 
+<script type="text/javascript" src="js/core/q.js"></script>
 <script type="text/javascript" src="js/core/minsubpub.js"></script>
 <script type="text/javascript" src="js/core/Choose.js"></script>
 <script type="text/javascript" src="js/core/ChooseView.js"></script>
 
-<script type="text/javascript" src="js/game/characters.js"></script>
+<script type="text/javascript" src="js/config/characters.js"></script>
+<script type="text/javascript" src="js/config/art.js"></script>
+
 <script type="text/javascript" src="js/game/menu.js"></script>
 <script type="text/javascript" src="js/game/jack_1.js"></script>
-
 <script type="text/javascript" src="js/game/dinner_1.js"></script>
 <script type="text/javascript" src="js/game/dinner_2.js"></script>
 <script type="text/javascript" src="js/game/dinner_3.js"></script>
@@ -30,8 +32,8 @@
 <script type="text/javascript" src="js/game/outro.js"></script>
 
 <script>
-window.onload = function(){ Start(); }
-/*window.onload = function(){
+//window.onload = function(){ Start(); }
+window.onload = function(){
 
 	$ = {
 
@@ -57,19 +59,31 @@ window.onload = function(){ Start(); }
 	    "top_or_bottom": "bottom",
 	    "promise_silence": "no",
 	    
-	    "grounded": 0,
+	    /*"grounded": 0,
 	    "tried_talking_about_it": true,
 	    "father_oblivious": false,
 	    "punched": true,
 	    
 	    "told_jack": "school",
 	    "blame": "jack",
-	    "breaking_up_soon": true
+	    "breaking_up_soon": true*/
 
 	};
-	The_Game_Ends();
 
-}*/
+	Q.all(_artPromises).then(function(){
+	
+		Show("background","dinner");
+		Show("clock","clock_ticking",{x:155,y:294});
+		Show("nicky","dinner_nicky_sit",{x:0,y:300});
+		Show("dad",null,{x:0,y:300});
+		Show("mom","mom_sit",{x:0,y:300});
+		Show("table","dinner_table_2",{x:0,y:420});
+
+		Father_Soon("./////");
+
+	});
+
+};
 </script>
 
 </html>

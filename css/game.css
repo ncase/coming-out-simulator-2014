@@ -36,6 +36,10 @@ body{
 	width:100%;height:520px;
 	background-repeat: none;
 	background-color: #000;
+	overflow: hidden;
+}
+#game #background > div{
+	position: absolute;
 }
 
 

@@ -25,6 +25,9 @@ function My_Fault(message){
 	m(". . .");
 	m("This is all my fault...");
 	m("I told you to be careful around those kinds of people, but I told you too late...");
+
+	Show("mom","mom_cry");
+
 	m("[sob]");
 	m("Oh Nick! My poor baby!");
 
@@ -83,6 +86,8 @@ function What_Are_You(){
 	m(". . .");
 	m("Nick... what are you?");
 	n("Excuse me?");
+
+	Show("mom","mom_sit");
 	m("What <i>are</i> you?");
 
 	Choose({
@@ -186,6 +191,8 @@ function Have_You_Had_Sex_2(){
 
 function Throw_Up(){
 
+	Show("mom","mom_vomit");
+	Show("table","dinner_table_2");
 	m("[PROJECTILE VOMIT]");
 
 	Choose({
@@ -199,6 +206,8 @@ function Throw_Up(){
 function Father_Soon(message){
 
 	n(message);
+
+	Show("mom","mom_sit");
 
 	m(". . .");
 	m("Your father will be back soon.");

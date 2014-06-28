@@ -11,7 +11,7 @@ function Start_Dinner_5(){
 	f("Hey Qiying! Hey Nick!");
 	f("I'm home!");
 	
-	Scene({ image:"img/dinner_5.png" });
+	Show("dad","dad_serious");
 
 	m("Hi honey.");
 	n("Sup dad, how was your day?");
@@ -49,8 +49,6 @@ function Start_Dinner_5(){
 
 function Casual(){
 	
-	m("Please, dear, sit down and eat.");
-	f("Don't mind if I do!");
 	f("Hey Qi, what's that sauce on your plate?");
 	f("Uh...");
 
@@ -498,7 +496,11 @@ function Argument_Ending(){
 }
 
 function Dinner_Ending_Punch(){
-	f("[PUNCH]");
+
+	Show("dad",null);
+	Show("nicky","dinner_nicky_punched");
+	Wait(500);
+	
 	$.punched = true;
 	Dinner_Ending();	
 }

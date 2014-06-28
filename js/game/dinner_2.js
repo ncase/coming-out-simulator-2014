@@ -6,6 +6,7 @@
 function Start_Dinner_2(){
 
 	m("Hi sweetie.");
+	Show("mom","mom_sit");
 
 	switch($.waiting_action){
 		case "eat":
