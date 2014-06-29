@@ -163,6 +163,7 @@ function Play_3(){
 	p("Hey, I just said that!");
 
 	// HACK - Just clear dialogue & stuff.
+	Wait(1000);
 	queue(function(){
 		dialogueDOM.innerHTML = "";
 		dialogueDOM.style.top = "20px";

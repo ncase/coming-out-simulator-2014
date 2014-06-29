@@ -56,8 +56,14 @@ function Start_Outro(){
 
 function Closure(){
 
+	Show("nicky","coffee_nicky_drink");
+	Show("cup",null);
+
 	p("Ugh.");
 	p("I feel gross just using the same-coloured dialogue balloons as the Father character.");
+
+	Show("nicky","coffee_nicky_still");
+	Show("cup","cup_steam");
 
 	N("Which reminds me. Many of the characters have been swapped around.");
 	N("All names have been changed, except mine.");
@@ -67,9 +73,8 @@ function Closure(){
 	if($.main_menu_convo_2==3){
 		N("Like you said, this 'true' game is full of lies.");
 	}
-
+	
 	p("You could have at least given me a different colour.");
-
 	N("It's been four years since that night...");
 	N("What do you think happened afterwards?");
 
@@ -141,10 +146,16 @@ function Is_Last_Story(){
 
 
 function Tell_Me_A_Lie(message){
+
 	$.told_story_lie = true;
 	$.order_of_stories.push("lie");
 
+	Show("nicky","coffee_nicky_drink");
+	Show("cup",null);
 	p(message);
+	Show("nicky","coffee_nicky_still");
+	Show("cup","cup_steam");
+
 	N("Very well.");
 	Is_Last_Story();
 
@@ -218,10 +229,16 @@ function Tell_Me_A_Lie_2(){
 
 
 function Tell_Me_A_Truth(message){
+
 	$.told_story_truth = true;
 	$.order_of_stories.push("truth");
 
+	Show("nicky","coffee_nicky_drink");
+	Show("cup",null);
 	p(message);
+	Show("nicky","coffee_nicky_still");
+	Show("cup","cup_steam");
+
 	N("Here it goes.");
 	Is_Last_Story();
 
@@ -291,7 +308,12 @@ function Tell_Me_A_Half_Truth(message){
 	$.told_story_half_truth = true;
 	$.order_of_stories.push("half-truth");
 
+	Show("nicky","coffee_nicky_drink");
+	Show("cup",null);
 	p(message);
+	Show("nicky","coffee_nicky_still");
+	Show("cup","cup_steam");
+
 	N("As you wish.");
 	Is_Last_Story();
 
@@ -363,6 +385,21 @@ function Finale_1(){
 	
 	N("And that's the last of the post-coming-out stories!");
 
+	// HACK - Just clear dialogue & stuff.
+	Wait(1000);
+	queue(function(){
+		dialogueDOM.innerHTML = "";
+		dialogueDOM.style.top = "20px";
+		dialogueDOMOffset = 20;
+		choicesDOM.innerHTML = "";
+	},0);
+	Show("cup",null);
+	Show("nicky","coffee_nicky_throw");
+	Wait(1000);
+	Show("nicky","coffee_nicky_still_2");
+
+	//////////////////////////
+
 	N("Dear player, I couldn't help but notice...");
 	if($.order_of_stories[0]=="truth"){
 		N("You went straight for the Truth first.");
@@ -401,10 +438,15 @@ function Finale_1(){
 
 function Finale_2(){
 
+	Show("nicky","coffee_nicky_packup_1");
+
 	N(". . .");
 	N("You know, if I could go back and relive all my other possible choices...");
 	N("... which in a sense, I did, by writing this game...");
 	N("... I wouldn't change a thing.");
+
+	Show("nicky","coffee_nicky_packup_2");
+
 	p("? ? ?");
 
 	if($.punched){
@@ -428,11 +470,15 @@ function Finale_2(){
 }
 
 function Finale_3(message){
-	
+
 	p(message);
+
+	Show("nicky","coffee_nicky_packup_3");
 
 	N("Yes, really!");
 	N("I wouldn't have been so motivated to forge my own life... if my previous life wasn't total utter shit.");
+
+	Show("nicky","coffee_nicky_packup_4");
 
 	N("Later in 2010, Dan Savage launched the It Gets Better&trade; campaign.");
 	N("My three stories... Lie, Truth, Half-Truth... they're all at least true about one thing.");
@@ -450,8 +496,27 @@ function Finale_3(message){
 	N(". . .");
 	N("I won.");
 
-	// Just clear dialogue & stuff.
-	queue(function(){ publish("clear",[]); },0);
+	// HACK - Just clear dialogue & stuff.
+	Wait(1000);
+	queue(function(){
+		dialogueDOM.innerHTML = "";
+		dialogueDOM.style.top = "20px";
+		dialogueDOMOffset = 20;
+		choicesDOM.innerHTML = "";
+	},0);
+
+	// CUTSCENE -- MY NEW BOYFRIEND
+	Wait(1000);
+	Show("nicky","coffee_nicky_date_1");
+	Wait(1000);
+	Show("nicky","coffee_nicky_date_2");
+	Wait(1000);
+	Show("nicky","coffee_nicky_date_3");
+	Wait(1000);
+	Show("nicky","coffee_nicky_date_4");
+	Wait(1000);
+	Show("nicky",null);
+	Wait(1000);
 
 	Choose({
 		"REPLAY?": Finale_4
