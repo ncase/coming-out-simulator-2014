@@ -238,6 +238,7 @@ function What_Now_2(){
 			n("we can still be frie");
 			n(". . .");
 			j("Because, of course we're friends. Of course we are.");
+			n(". . .");
 			What_Now_3();
 		},
 		"We stick together as long as we can.": function(message){
@@ -245,6 +246,7 @@ function What_Now_2(){
 
 			j(". . .");
 			j("As long as we can.");
+			n(". . .");
 			What_Now_3();
 		},
 		"I don't know.": function(message){
@@ -260,31 +262,6 @@ function What_Now_2(){
 }
 
 function What_Now_3(){
-
-	n(". . .");	
-	j("Nicky, I love you, no matter what.");
-	n("Ugh, please don't say that.");
-	j("What?...");
-	n("It's not you. It's... my mother said that to me, right after she threatened to break us up.");
-	j(". . .");
-	j("Do you still...");
-	j("...never mind.");
-
-	Choose({
-		"I don't know if I can afford to love you anymore.": function(message){
-			$.breaking_up_soon = true;
-			What_Now_4(message);
-		},
-		"Yes. I love you, Jack.": What_Now_4,
-		". . .": What_Now_4
-	});
-
-}
-
-function What_Now_4(message){
-
-	n(message);
-	j(". . .");
 
 	n("It's late. There's a lot I need to sleep on, now.");
 	j("Okay.");

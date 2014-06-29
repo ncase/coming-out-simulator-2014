@@ -47,9 +47,8 @@ function resetTimer(){
 
 var TIMER_GAP = 100;
 function getDuration(message){
-	// Approx 6 words per second, or 160ms per word. Plus 500ms just in case.
-	//return 300;
-	return 800 + message.split(" ").length*160;
+	// Approx 5 words per second, or 200ms per word. Plus 700ms just in case.
+	return 700 + message.split(" ").length*200;
 }
 
 var _queue = [];

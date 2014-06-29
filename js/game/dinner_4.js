@@ -9,22 +9,30 @@ function Start_Dinner_4(){
 	m("Without a strong male role model, you become confused...");
 
 	Choose({
-		"Yeah, coz Dad's SUCH a great role model.": My_Fault,
-		"That's not how it works. I'd be bi anyway.": My_Fault,
-		"You know what? Maybe you're right.": My_Fault
+		"Yeah, coz Dad's SUCH a great role model.": function(message){
+			n(message);
+			m("Nick, no matter what, he's your father. You should love him.");
+			My_Fault();
+		},
+		"That's not how it works. I'd be bi anyway.": function(message){
+			n(message);
+			m("How do you know?! Are you an expert in psychology?!");
+			My_Fault();
+		},
+		"You know what? Maybe you're right.": function(message){
+			n(message);
+			m("I know...");
+			My_Fault();
+		}
 	});
 
 }
 
-function My_Fault(message){
+function My_Fault(){
 	
-	n(message);
-
-	m("Nick, I love you, no matter what.");
-
 	Show("clock_time","clock_1930");
 
-	m(". . .");
+	n(". . .");
 	m("This is all my fault...");
 	m("I told you to be careful around those kinds of people, but I told you too late...");
 

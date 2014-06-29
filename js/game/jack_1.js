@@ -205,9 +205,10 @@ function Hiding(){
 	if($.hippies){
 		n("That's NOT a fair comparison.");
 		n("LIKE I SAID, you and your parents are a bunch of new-age hippies.");
-		n("Always hugging trees and smoking trees.");
-		j(". . .");
-		j("The point is, they were supportive.");
+		n("When I'm at your place, I can't tell if all the smoke is incense or marijuana.");
+		j("Hey! We only smoke weed every other day!");
+		n("Heh.");
+		j("The point is, my parents supported my coming out.");
 	}else{
 		j("And they were very supportive!");
 	}

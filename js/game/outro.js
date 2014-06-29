@@ -113,6 +113,7 @@ function Closure_Story(){
 
 	if($.coming_out_stories_left==3){
 		N("Which version of my post-coming-out story do you want to hear first?");
+		N("Don't worry, you'll get to hear all of them. Which should we start with?");
 	}else if($.coming_out_stories_left==2){
 		N("Now, which version do you want to hear next?");
 	}else if($.coming_out_stories_left==1){
