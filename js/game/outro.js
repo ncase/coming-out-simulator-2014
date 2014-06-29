@@ -5,10 +5,16 @@
 
 function Start_Outro(){
 
-	queue(function(){
-		publish("clear",[]);
-	},0);
-	Show("background","coffeehouse");
+	// Just clear dialogue & stuff.
+	queue(function(){ publish("clear",[]); },0);
+	
+	/////// SET UP SCENE ////////
+
+	Show("background","coffeehouse_2");
+	Show("cup","cup_steam",{x:44,y:359});
+	Show("nicky","coffee_nicky_still");
+
+	///////////////////////////////
 
 	if($.breaking_up_soon){
 		N("And then we broke up three days later.");
@@ -443,6 +449,9 @@ function Finale_3(message){
 	N("I won.");
 	N(". . .");
 	N("I won.");
+
+	// Just clear dialogue & stuff.
+	queue(function(){ publish("clear",[]); },0);
 
 	Choose({
 		"REPLAY?": Finale_4

@@ -1,6 +1,24 @@
 Background("coffeehouse","img/backgrounds/coffeehouse.png");
+Background("coffeehouse_2","img/backgrounds/coffeehouse_2.png");
+
 Background("bedroom","img/backgrounds/bedroom.png");
 Background("dinner","img/backgrounds/dinner.png");
+
+////////// COFFEE /////////////
+
+Still("coffee_nicky_still","img/stills/coffee_nicky_still.png");
+Still("coffee_nicky_still_2","img/stills/coffee_nicky_still_2.png");
+Still("coffee_nicky_drink","img/stills/coffee_nicky_drink.png");
+Still("coffee_nicky_throw","img/stills/coffee_nicky_throw.png");
+
+Sprite("cup_steam",{
+	src: "img/sprites/cup_steam.png",
+	width:80, height:80,
+	frames:4, fps:2
+});
+
+
+////////// DINNER /////////////
 
 Still("dinner_table","img/stills/dinner_table.png");
 Still("dinner_table_2","img/stills/dinner_table_2.png");

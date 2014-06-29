@@ -59,29 +59,19 @@ window.onload = function(){
 	    "top_or_bottom": "bottom",
 	    "promise_silence": "no",
 	    
-	    /*"grounded": 0,
+	    "grounded": 0,
 	    "tried_talking_about_it": true,
 	    "father_oblivious": false,
 	    "punched": true,
 	    
 	    "told_jack": "school",
 	    "blame": "jack",
-	    "breaking_up_soon": true*/
+	    "breaking_up_soon": true
 
 	};
 
 	Q.all(_artPromises).then(function(){
-
-		Show("background","dinner");
-		Show("clock","clock_ticking",{x:155,y:294});
-		Show("clock_time","clock_1855",{x:155+5,y:294+37});
-		Show("nicky","dinner_nicky_sit",{x:0,y:300});
-		Show("dad",null,{x:0,y:300});
-		Show("mom",null,{x:0,y:300});
-		Show("table","dinner_table",{x:0,y:420});
-
-		Start_Dinner_5();
-
+		Start_Outro();
 	});
 
 };

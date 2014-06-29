@@ -2,7 +2,13 @@ function Start(){
 
 	$ = {};
 	
+	/////// SET UP SCENE ////////
+
 	Show("background","coffeehouse");
+	Show("cup","cup_steam",{x:44,y:359});
+	Show("nicky","coffee_nicky_still");
+
+	//////////////////////////////
 
 	N("<b>COMING OUT SIMULATOR 2014</b>");
 	N("A half-true game about half-truths.");
@@ -23,7 +29,13 @@ function Start(){
 
 function Play(message){
 	
+	Show("nicky","coffee_nicky_drink");
+	Show("cup",null);
+
 	p(message);
+
+	Show("nicky","coffee_nicky_still");
+	Show("cup","cup_steam");
 
 	// Asked neither
 	if(!$.asked_about && !$.asked_credits){
@@ -58,11 +70,11 @@ function Play(message){
 			N("No.");
 			Play_2();
 		},
-		"Apparently, with you on a laptop.": function(message){
+		"Apparently, with you redditing at Starbucks.": function(message){
 			$.main_menu_convo_1 = 2;
 
 			p(message);
-			N("Hey, I'm busy transforming my personal coming-of-age story into this game you're playing right now.");
+			N("Hey, I'm coding on this laptop. Turning my coming-of-age story into the game you're playing right now.");
 			p("Naw, you're probably procrastinating.");
 			N("Look who's talking.");
 			p("Touché, douché.");
@@ -145,8 +157,25 @@ function Play_3(){
 	}
 	N(whatISay);
 
+	Show("nicky","coffee_nicky_drink");
+	Show("cup",null);
+
 	p("Hey, I just said that!");
 
+	// HACK - Just clear dialogue & stuff.
+	queue(function(){
+		dialogueDOM.innerHTML = "";
+		dialogueDOM.style.top = "20px";
+		dialogueDOMOffset = 20;
+		choicesDOM.innerHTML = "";
+	},0);
+
+	Wait(500);
+	Show("nicky","coffee_nicky_throw");
+	Wait(1000);
+	Show("nicky","coffee_nicky_still_2");
+	Wait(500);
+	
 	N("When you play...");
 	N("Choose your words wisely.");
 	N("Every character will remember everything you say. Or don't say.");
@@ -164,12 +193,18 @@ function Play_3(){
 function Credits(message){
 
 	$.asked_credits = true;
+
+	Show("nicky","coffee_nicky_drink");
+	Show("cup",null);
 	
 	if($.asked_about){
 		p(message);
 	}else{
 		p("Who are you?");
 	}
+
+	Show("nicky","coffee_nicky_still");
+	Show("cup","cup_steam");
 	
 	N("Ah, how rude of me! Let me introduce myself.");
 	N("Hi, I'm Nicky Case.");
@@ -216,7 +251,13 @@ function About(message){
 
 	$.asked_about = true;
 
+	Show("nicky","coffee_nicky_drink");
+	Show("cup",null);
+
 	p(message);
+
+	Show("nicky","coffee_nicky_still");
+	Show("cup","cup_steam");
 
 	if($.asked_credits){
 		N("I wanted to tell my story.");

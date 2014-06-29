@@ -127,7 +127,7 @@ subscribe("show", function(label, artLabel, position){
 				ticks = (ticks+1) % ticksPerFrame;
 				if(ticks==0){
 					item.frame = (item.frame+1) % image.frames;
-					var bgX = item.frame*image.width;
+					var bgX = -item.frame*image.width;
 					var bgY = 0;
 					dom.style.backgroundPosition = bgX+"px "+bgY+"px";
 				}
