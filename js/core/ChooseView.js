@@ -21,6 +21,9 @@ subscribe("say", function(character, message){
 	dom.innerHTML = message;
 	dialogueDOM.appendChild(dom);
 
+	// Play sounds
+	createjs.Sound.play(character.sound);
+
 	// Fade in
 	setTimeout(function(){
 		dom.style.opacity = 1;

@@ -1,8 +1,8 @@
 ////////// SYSTEM /////////////
 
-/*Sound("text_1","sounds/sfx/text_1");
-Sound("text_2","sounds/sfx/text_2");
-Sound("text_3","sounds/sfx/text_3");*/
+Sound("text_low","sounds/sfx/text_low.ogg");
+Sound("text_mid","sounds/sfx/text_mid.ogg");
+Sound("text_high","sounds/sfx/text_high.ogg");
 
 ////////// COFFEE /////////////
 
@@ -16,7 +16,7 @@ Sound("laptop_pack_2","sounds/sfx/laptop_pack_2.ogg");
 Sound("step_1","sounds/sfx/step_1.ogg");
 Sound("step_2","sounds/sfx/step_2.ogg");
 
-//Sound("coffee_throw","sounds/sfx/coffee_throw");
+Sound("coffee_throw","sounds/sfx/coffee_throw.ogg");
 
 ////////// BEDROOM /////////////
 

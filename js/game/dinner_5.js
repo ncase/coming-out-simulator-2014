@@ -559,9 +559,13 @@ function Dinner_Ending(){
 	Wait(1000);
 
 	queue(ClearDialogue,0);
+
+	Wait(700);
+
 	PlaySound("clock","dinner_meowing",{loop:-1});
 	Show("clock","clock_meowing");
 	Show("clock_time","clock_2000");
+
 	Wait(1000);
 
 	Clear();

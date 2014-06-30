@@ -14,7 +14,7 @@ function Start_Dinner_1(){
 
 	////////////////////////////
 
-	Wait(2000);
+	Wait(2500);
 	n("Where is everyone?...");
 	n(". . .");
 

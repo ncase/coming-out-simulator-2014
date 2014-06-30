@@ -395,8 +395,11 @@ function Finale_1(){
 	// HACK - Just clear dialogue & stuff.
 	Wait(1000);
 	queue(ClearDialogue,0);
+	
 	Show("cup",null);
 	Show("nicky","coffee_nicky_throw");
+	PlaySound("sfx","coffee_throw");
+
 	Wait(1000);
 	Show("nicky","coffee_nicky_still_2");
 
@@ -501,8 +504,6 @@ function Finale_3(message){
 
 	p(". . .");
 	N("I won.");
-	N(". . .");
-	N("I won.");
 
 	// HACK - Just clear dialogue & stuff.
 	Wait(1000);
@@ -511,8 +512,7 @@ function Finale_3(message){
 	// CUTSCENE -- MY NEW BOYFRIEND
 	Wait(1000);
 	
-	PlaySound("sfx","step_1");
-	PlaySound("sfx2","laptop_pack_2");
+	PlaySound("sfx2","laptop_pack");
 	Show("nicky","coffee_nicky_date_1");
 	Wait(1000);
 	

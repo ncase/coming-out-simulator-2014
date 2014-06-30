@@ -174,6 +174,8 @@ function Play_3(){
 
 	Wait(500);
 	Show("nicky","coffee_nicky_throw");
+	PlaySound("sfx","coffee_throw");
+	
 	Wait(1000);
 	Show("nicky","coffee_nicky_still_2");
 	Wait(500);
