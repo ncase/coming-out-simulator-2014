@@ -222,9 +222,9 @@ function Credits(message){
 		p("I said it before and I'll say it again...");
 		p("Of course. You narcissist.");
 		N("Well it's not ALL me.");
-		N("The music & audio are from various public domain sources.");
+		N("The sounds & audio are from various public domain sources.");
 	}else{
-		N("The music & audio, though, are from various public domain sources.");
+		N("The sounds & audio, though, are from various public domain sources.");
 	}
 
 	N("But although it's mostly just me behind this game...");
