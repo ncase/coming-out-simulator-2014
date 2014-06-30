@@ -70,6 +70,7 @@ function ClearDialogue(){
 }
 
 function ClearScene(){
+	createjs.Sound.stop();
 	_sceneItems = {};
 	_soundItems = {};
 	backgroundDOM.innerHTML = "";
@@ -147,34 +148,12 @@ subscribe("show", function(label, artLabel, position){
 });
 
 var _soundItems = {};
-subscribe("play", function(label, soundLabel){
-	
-	// Sound Item exists
-	var item = _soundItems[label];
-	var sound;
-	if(item){
-		sound = item.sound;
-	}else{
-		item = { sound: _sounds[soundLabel] };
-		_soundItems[label] = item;
-	}
-
-	// Play the sound
-	item.sound.play();
-
+subscribe("play", function(label, soundLabel, options){
+	_soundItems[label] = createjs.Sound.play(soundLabel,options);
 });
 subscribe("stop", function(label, soundLabel){
-
-	// Sound Item exists
-	var item = _soundItems[label];
-	if(item){
-		sound = item.sound;
-	}else{
-		return;
+	if(_soundItems[label]){
+		_soundItems[label].stop();
 	}
-
-	// Stop the sound
-	item.sound.stop();
-
 });
 

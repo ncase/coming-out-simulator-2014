@@ -47,8 +47,8 @@ function resetTimer(){
 
 var TIMER_GAP = 100;
 function getDuration(message){
-	// Approx 5 words per second, or 200ms per word. Plus 700ms just in case.
-	return 700 + message.split(" ").length*200;
+	// Approx 6 words per second, or 160ms per word. Plus 800ms just in case.
+	return 800 + message.split(" ").length*160;
 }
 
 var _queue = [];
@@ -139,14 +139,30 @@ function Sprite(label,options){
 	_sprites[label] = options;
 }
 
-function Sound(label,src,options){
+createjs.Sound.alternateExtensions = ["mp3"];
+function Sound(label,src){
+	
 	var deferred = Q.defer();
-	options = options || { formats: ['ogg', 'mp3'] };
-	_sounds[label] = AudioFX(src, options, function(){
-		deferred.resolve();
+	
+	createjs.Sound.registerSound({
+		id: label,
+		src: src
 	});
+
+	(function(label){
+		createjs.Sound.addEventListener("fileload", function(event){
+			if(event.id==label){
+				deferred.resolve();
+				console.log("well?");
+			}
+		});
+	})(label);
+
 	_resourcePromises.push(deferred.promise);
+
 }
+
+
 
 
 

@@ -15,7 +15,7 @@
 
 <script type="text/javascript" src="js/core/q.js"></script>
 <script type="text/javascript" src="js/core/minsubpub.js"></script>
-<script type="text/javascript" src="js/core/audio-fx.js"></script>
+<script type="text/javascript" src="js/core/soundjs-0.5.2.min.js"></script>
 
 <script type="text/javascript" src="js/core/Choose.js"></script>
 <script type="text/javascript" src="js/core/ChooseView.js"></script>
@@ -35,7 +35,11 @@
 <script type="text/javascript" src="js/game/outro.js"></script>
 
 <script>
-window.onload = function(){ Start(); }
+window.onload = function(){
+	Q.all(_resourcePromises).then(function(){
+		Start();
+	});
+};
 window.onload2 = function(){
 
 	// ZACH'S PLAYTHROUGH

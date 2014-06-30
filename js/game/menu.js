@@ -8,6 +8,8 @@ function Start(){
 	Show("cup","cup_steam",{x:44,y:359});
 	Show("nicky","coffee_nicky_still");
 
+	PlaySound("bg","coffeehouse",{loop:-1, volume:0.7});
+
 	//////////////////////////////
 
 	N("<b>COMING OUT SIMULATOR 2014</b>");
@@ -27,17 +29,18 @@ function Start(){
 
 }
 
-function Play(message){
-	
+function SipCoffee(message){
 	Show("nicky","coffee_nicky_drink");
 	Show("cup",null);
-
-	PlaySound("sfx","slap");
-
+	PlaySound("sfx","coffee_sip");
 	p(message);
-
 	Show("nicky","coffee_nicky_still");
 	Show("cup","cup_steam");
+}
+
+function Play(message){
+	
+	SipCoffee(message);
 
 	// Asked neither
 	if(!$.asked_about && !$.asked_credits){
@@ -159,6 +162,7 @@ function Play_3(){
 	}
 	N(whatISay);
 
+	PlaySound("sfx","coffee_sip");
 	Show("nicky","coffee_nicky_drink");
 	Show("cup",null);
 
@@ -191,18 +195,12 @@ function Play_3(){
 function Credits(message){
 
 	$.asked_credits = true;
-
-	Show("nicky","coffee_nicky_drink");
-	Show("cup",null);
 	
 	if($.asked_about){
-		p(message);
+		SipCoffee(message);
 	}else{
-		p("Who are you?");
+		SipCoffee("Who are you?");
 	}
-
-	Show("nicky","coffee_nicky_still");
-	Show("cup","cup_steam");
 	
 	N("Ah, how rude of me! Let me introduce myself.");
 	N("Hi, I'm Nicky Case.");
@@ -249,13 +247,7 @@ function About(message){
 
 	$.asked_about = true;
 
-	Show("nicky","coffee_nicky_drink");
-	Show("cup",null);
-
-	p(message);
-
-	Show("nicky","coffee_nicky_still");
-	Show("cup","cup_steam");
+	SipCoffee(message);
 
 	if($.asked_credits){
 		N("I wanted to tell my story.");

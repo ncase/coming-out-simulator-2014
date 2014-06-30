@@ -57,6 +57,8 @@ function Waiting_2(message){
 	Show("clock_time","clock_1900");
 	Wait(1000);
 
+	Show("nicky","dinner_nicky_defiant");
+
 	Choose({
 		"Cut the crying, cacophonous cat clock!": function(message){
 			n(message);
@@ -69,6 +71,8 @@ function Waiting_2(message){
 			}else{
 				m("Poetic.");
 			}
+
+			Show("nicky","dinner_nicky_sit");
 			n("Oh, hey mom.");
 			
 			Waiting_End();
@@ -80,6 +84,8 @@ function Waiting_2(message){
 			Show("clock","clock_ticking");
 
 			m("Your grandfather gave it to us.");
+
+			Show("nicky","dinner_nicky_sit");
 			n("Oh! Hey mom.");
 			
 			Waiting_End();
@@ -88,12 +94,16 @@ function Waiting_2(message){
 			
 			n("Meow.");
 			n("Meow!");
+
+			Show("nicky","dinner_nicky_outrage");
 			n("MEOW!");
 
 			Show("mom","mom_stand");
 			Show("clock","clock_ticking");
 
 			m("Nick, what are you doing?...");
+
+			Show("nicky","dinner_nicky_sit");
 			n("MEOOOhhhh didn't see you. Ahem. Hey mom.");
 
 			Waiting_End();
