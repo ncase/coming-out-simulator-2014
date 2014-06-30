@@ -556,11 +556,11 @@ function Dinner_Ending_Punch(){
 
 function Dinner_Ending(){
 
-	Wait(1000);
+	Wait(500);
 
 	queue(ClearDialogue,0);
 
-	Wait(700);
+	Wait(500);
 
 	PlaySound("clock","dinner_meowing",{loop:-1});
 	Show("clock","clock_meowing");

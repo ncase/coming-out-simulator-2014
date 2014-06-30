@@ -3,11 +3,9 @@ body{
 	overflow: hidden;
 	margin: 0;
 
-	-webkit-user-select: none;  /* Chrome all / Safari all */
-	-moz-user-select: none;     /* Firefox all */
-	-ms-user-select: none;      /* IE 10+ */
-
-	/* No support for these yet, use at own risk */
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
 	-o-user-select: none;
 	user-select: none;      
 
@@ -65,6 +63,12 @@ body{
 
 	cursor: pointer;
 
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;   
+
 }
 #game #choices > div:hover{
 	background: #444;
@@ -104,6 +108,15 @@ body{
 	-ms-transition: opacity 0.1s ease-in-out;
 	-o-transition: opacity 0.1s ease-in-out;
 	transition: opacity 0.1s ease-in-out;
+
+
+
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;   
+
 }
 #game #dialogue > div:after{
 	top: 50%;
