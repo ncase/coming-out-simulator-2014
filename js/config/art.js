@@ -28,7 +28,23 @@ Sprite("cup_steam",{
 ////////// BEDROOM /////////////
 
 Background("bedroom","img/backgrounds/bedroom.png");
-//Background("bedroom_2","img/backgrounds/bedroom_2.png");
+Background("bedroom_2","img/backgrounds/bedroom_2.png");
+
+Background("bedroom_us_1","img/stills/bedroom_us_1.png");
+Background("bedroom_us_2","img/stills/bedroom_us_2.png");
+Background("bedroom_punch","img/stills/bedroom_punch.png");
+
+Sprite("bedroom_light_1",{
+	src: "img/sprites/bedroom_light_1.png",
+	width:362, height:362,
+	frames:4, fps:2
+});
+
+Sprite("bedroom_light_2",{
+	src: "img/sprites/bedroom_light_2.png",
+	width:362, height:362,
+	frames:4, fps:2
+})
 
 
 ////////// DINNER /////////////

@@ -6,7 +6,7 @@
 function Start_Outro(){
 
 	// Just clear dialogue & stuff.
-	queue(function(){ publish("clear",[]); },0);
+	queue(ClearScene,0);
 	
 	/////// SET UP SCENE ////////
 
@@ -112,8 +112,8 @@ function Closure(){
 function Closure_Story(){
 
 	if($.coming_out_stories_left==3){
-		N("Which version of my post-coming-out story do you want to hear first?");
-		N("Don't worry, you'll get to hear all of them. Which should we start with?");
+		N("Which post-coming-out story do you want to hear first?");
+		N("Don't worry, you'll get to hear all three of them.");
 	}else if($.coming_out_stories_left==2){
 		N("Now, which version do you want to hear next?");
 	}else if($.coming_out_stories_left==1){
@@ -388,12 +388,7 @@ function Finale_1(){
 
 	// HACK - Just clear dialogue & stuff.
 	Wait(1000);
-	queue(function(){
-		dialogueDOM.innerHTML = "";
-		dialogueDOM.style.top = "20px";
-		dialogueDOMOffset = 20;
-		choicesDOM.innerHTML = "";
-	},0);
+	queue(ClearDialogue,0);
 	Show("cup",null);
 	Show("nicky","coffee_nicky_throw");
 	Wait(1000);
@@ -489,7 +484,7 @@ function Finale_3(message){
 
 	N("And...");
 	N("At the end...");
-	N("Of this long, stupid, painful game...");
+	N("Of this long, painful, stupid game...");
 	N("Where I played against people who should have been on my side...");
 
 	p(". . .");
@@ -499,12 +494,7 @@ function Finale_3(message){
 
 	// HACK - Just clear dialogue & stuff.
 	Wait(1000);
-	queue(function(){
-		dialogueDOM.innerHTML = "";
-		dialogueDOM.style.top = "20px";
-		dialogueDOMOffset = 20;
-		choicesDOM.innerHTML = "";
-	},0);
+	queue(ClearDialogue,0);
 
 	// CUTSCENE -- MY NEW BOYFRIEND
 	Wait(1000);

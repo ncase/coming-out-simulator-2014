@@ -10,7 +10,17 @@
 
 function Start_Jack_2(){
 
-	Show("background","bedroom");
+	/////// SET UP SCENE ////////
+
+	Show("background","bedroom_2");
+	Show("us","bedroom_us_2");
+	Show("light","bedroom_light_2",{x:0,y:159});
+
+	if($.punched){
+		Show("punch","bedroom_punch",{x:256,y:404});
+	}
+
+	/////////////////////////////
 
 	n("Hey Jack.");
 	if($.sadsack){

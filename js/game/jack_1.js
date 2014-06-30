@@ -8,7 +8,13 @@
 
 function Start_Jack_1(){
 	
+	/////// SET UP SCENE ////////
+
 	Show("background","bedroom");
+	Show("us","bedroom_us_1");
+	Show("light","bedroom_light_1",{x:0,y:159});
+
+	/////////////////////////////
 
 	j("And when he simply announces,");
 	j("'I bought the airline.'");

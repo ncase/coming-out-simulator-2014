@@ -86,6 +86,18 @@ function Show(){
 		publish("show", args);
 	},0,true);
 }
+function PlaySound(){
+	var args = arguments;
+	queue(function(){
+		publish("play", args);
+	},0,true);
+}
+function StopSound(){
+	var args = arguments;
+	queue(function(){
+		publish("stop", args);
+	},0,true);
+}
 
 function Wait(duration){
 	queue(function(){},duration);
@@ -98,20 +110,19 @@ function Clear(duration){
 	Wait(1000);
 }
 
-var _artPromises = [];
+var _resourcePromises = [];
 var _stills = {};
 var _sprites = {};
+var _sounds = {};
 
 function _promiseLoadImage(src){
 	var deferred = Q.defer();
 	var img = new Image();
 	img.onload = function(){
-		setTimeout(function(){
-			deferred.resolve();
-		},1000);
+		deferred.resolve();
 	};
 	img.src = src;
-	_artPromises.push(deferred.promise);
+	_resourcePromises.push(deferred.promise);
 }
 
 function Still(label,src){
@@ -127,3 +138,15 @@ function Sprite(label,options){
 	_promiseLoadImage(options.src);
 	_sprites[label] = options;
 }
+
+function Sound(label,src,options){
+	var deferred = Q.defer();
+	options = options || { formats: ['ogg', 'mp3'] };
+	_sounds[label] = AudioFX(src, options, function(){
+		deferred.resolve();
+	});
+	_resourcePromises.push(deferred.promise);
+}
+
+
+

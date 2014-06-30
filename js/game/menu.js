@@ -32,6 +32,8 @@ function Play(message){
 	Show("nicky","coffee_nicky_drink");
 	Show("cup",null);
 
+	PlaySound("sfx","slap");
+
 	p(message);
 
 	Show("nicky","coffee_nicky_still");
@@ -164,12 +166,7 @@ function Play_3(){
 
 	// HACK - Just clear dialogue & stuff.
 	Wait(1000);
-	queue(function(){
-		dialogueDOM.innerHTML = "";
-		dialogueDOM.style.top = "20px";
-		dialogueDOMOffset = 20;
-		choicesDOM.innerHTML = "";
-	},0);
+	queue(ClearDialogue,0);
 
 	Wait(500);
 	Show("nicky","coffee_nicky_throw");

@@ -62,14 +62,21 @@ subscribe("choose", function(choices){
 
 });
 
-subscribe("clear", function(){
-	_sceneItems = {};
-	backgroundDOM.innerHTML = "";
+function ClearDialogue(){
 	dialogueDOM.innerHTML = "";
 	dialogueDOM.style.top = "20px";
 	dialogueDOMOffset = 20;
 	choicesDOM.innerHTML = "";
-});
+}
+
+function ClearScene(){
+	_sceneItems = {};
+	_soundItems = {};
+	backgroundDOM.innerHTML = "";
+	ClearDialogue();
+}
+
+subscribe("clear",ClearScene);
 
 var _sceneItems = {};
 subscribe("show", function(label, artLabel, position){
@@ -138,3 +145,36 @@ subscribe("show", function(label, artLabel, position){
 	}
 
 });
+
+var _soundItems = {};
+subscribe("play", function(label, soundLabel){
+	
+	// Sound Item exists
+	var item = _soundItems[label];
+	var sound;
+	if(item){
+		sound = item.sound;
+	}else{
+		item = { sound: _sounds[soundLabel] };
+		_soundItems[label] = item;
+	}
+
+	// Play the sound
+	item.sound.play();
+
+});
+subscribe("stop", function(label, soundLabel){
+
+	// Sound Item exists
+	var item = _soundItems[label];
+	if(item){
+		sound = item.sound;
+	}else{
+		return;
+	}
+
+	// Stop the sound
+	item.sound.stop();
+
+});
+
