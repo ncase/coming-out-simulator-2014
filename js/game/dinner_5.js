@@ -7,6 +7,8 @@
 // Agree (calm dinner) --- Stressed Dinner, storms off --- Punches you in the damn face.
 
 function Start_Dinner_5(){
+
+	PlaySound("sfx","dinner_door");
 	
 	f("Hey Qiying! Hey Nick!");
 	f("I'm home!");
@@ -503,6 +505,7 @@ function Argument_Ending(){
 			Show("dad",null);
 
 			f("Honey sweetie dear? Your cooking is shit.");
+			PlaySound("sfx","dinner_door");
 
 			m(". . .");
 			
@@ -534,8 +537,14 @@ function Argument_Ending(){
 
 function Dinner_Ending_Punch(){
 
+	Wait(500);
+
+	queue(ClearDialogue,0);
+
+	StopSound("clock");
+	PlaySound("sfx","dinner_punch");
+
 	Show("dad",null);
-	
 	Show("mom","mom_cry");
 	Show("nicky","dinner_nicky_punched");
 	Show("dinner_punch_arm","dinner_punch_arm",{x:0,y:300});
@@ -548,6 +557,9 @@ function Dinner_Ending_Punch(){
 function Dinner_Ending(){
 
 	Wait(1000);
+
+	queue(ClearDialogue,0);
+	PlaySound("clock","dinner_meowing",{loop:-1});
 	Show("clock","clock_meowing");
 	Show("clock_time","clock_2000");
 	Wait(1000);

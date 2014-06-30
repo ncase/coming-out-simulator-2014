@@ -16,6 +16,8 @@ function Start_Jack_2(){
 	Show("us","bedroom_us_2");
 	Show("light","bedroom_light_2",{x:0,y:159});
 
+	PlaySound("bg","bedroom_2",{loop:-1,volume:0.5});
+
 	if($.punched){
 		Show("punch","bedroom_punch",{x:256,y:404});
 	}
@@ -273,10 +275,13 @@ function What_Now_2(){
 
 function What_Now_3(){
 
-	n("It's late. There's a lot I need to sleep on, now.");
+	n("It's late.");
+	n("There's a lot I need to sleep on, now.");
 	j("Okay.");
-	j("Goodnight, Nicky.");
-	n("Goodnight, Jack.");
+	j(". . .");
+	j("I love you, Nicky.");
+	n("I love you too, Jack.");
+	
 	var insult = "";
 	if($.hippies) insult+=" new-age hippie";
 	if($.im_a_poet) insult+=" amateur poet";
@@ -291,6 +296,7 @@ function What_Now_3(){
 }
 
 function The_Game_Ends(){
+	Wait(500);
 	Start_Outro();
 }
 

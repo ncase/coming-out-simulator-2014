@@ -149,9 +149,12 @@ subscribe("show", function(label, artLabel, position){
 
 var _soundItems = {};
 subscribe("play", function(label, soundLabel, options){
+	if(_soundItems[label]){
+		_soundItems[label].stop();
+	}
 	_soundItems[label] = createjs.Sound.play(soundLabel,options);
 });
-subscribe("stop", function(label, soundLabel){
+subscribe("stop", function(label){
 	if(_soundItems[label]){
 		_soundItems[label].stop();
 	}

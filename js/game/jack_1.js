@@ -14,6 +14,8 @@ function Start_Jack_1(){
 	Show("us","bedroom_us_1");
 	Show("light","bedroom_light_1",{x:0,y:159});
 
+	PlaySound("bg","bedroom_1",{loop:-1});
+
 	/////////////////////////////
 
 	j("And when he simply announces,");

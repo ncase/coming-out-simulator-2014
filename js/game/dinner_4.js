@@ -91,6 +91,8 @@ function Cry_3(message){
 	m("owww... owww...");
 	n("BRRrrRR-BRR-BRbR BWAH BWAHRR rrrRRR-WaahHH WO WO WO RaaahhH");
 	m("sniff...");
+
+	Show("nicky","dinner_nicky_defiant");
 	n("Okay, we done?");
 	What_Are_You();
 
@@ -212,6 +214,8 @@ function Have_You_Had_Sex_2(){
 }
 
 function Throw_Up(){
+
+	PlaySound("sfx","dinner_vomit");
 
 	Show("clock_time","clock_1940");
 	Show("mom","mom_vomit");

@@ -10,6 +10,8 @@ function Start_Dinner_1(){
 	Show("mom",null,{x:0,y:300});
 	Show("table","dinner_table",{x:0,y:420});
 
+	PlaySound("clock","dinner_ticking",{loop:-1});
+
 	////////////////////////////
 
 	Wait(2000);
@@ -53,6 +55,8 @@ function Waiting_2(message){
 	n(message);
 	n(". . .");
 
+	PlaySound("clock","dinner_meowing",{loop:-1});
+
 	Show("clock","clock_meowing");
 	Show("clock_time","clock_1900");
 	Wait(1000);
@@ -65,6 +69,7 @@ function Waiting_2(message){
 
 			Show("mom","mom_stand");
 			Show("clock","clock_ticking");
+			PlaySound("clock","dinner_ticking",{loop:-1});
 
 			if($.im_a_poet){
 				m("Did you learn poetry from a friend?");
@@ -82,6 +87,7 @@ function Waiting_2(message){
 
 			Show("mom","mom_stand");
 			Show("clock","clock_ticking");
+			PlaySound("clock","dinner_ticking",{loop:-1});
 
 			m("Your grandfather gave it to us.");
 
@@ -99,11 +105,13 @@ function Waiting_2(message){
 			n("MEOW!");
 
 			Show("mom","mom_stand");
-			Show("clock","clock_ticking");
 
 			m("Nick, what are you doing?...");
 
+			Show("clock","clock_ticking");
+			PlaySound("clock","dinner_ticking",{loop:-1});
 			Show("nicky","dinner_nicky_sit");
+
 			n("MEOOOhhhh didn't see you. Ahem. Hey mom.");
 
 			Waiting_End();

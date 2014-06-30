@@ -153,7 +153,6 @@ function Sound(label,src){
 		createjs.Sound.addEventListener("fileload", function(event){
 			if(event.id==label){
 				deferred.resolve();
-				console.log("well?");
 			}
 		});
 	})(label);

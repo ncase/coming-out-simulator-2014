@@ -14,6 +14,8 @@ function Start_Outro(){
 	Show("cup","cup_steam",{x:44,y:359});
 	Show("nicky","coffee_nicky_still");
 
+	PlaySound("bg","coffeehouse",{loop:-1, volume:0.7});
+
 	///////////////////////////////
 
 	if($.breaking_up_soon){
@@ -56,6 +58,7 @@ function Start_Outro(){
 
 function Closure(){
 
+	PlaySound("sfx","coffee_sip");
 	Show("nicky","coffee_nicky_drink");
 	Show("cup",null);
 
@@ -151,6 +154,7 @@ function Tell_Me_A_Lie(message){
 	$.told_story_lie = true;
 	$.order_of_stories.push("lie");
 
+	PlaySound("sfx","coffee_sip");
 	Show("nicky","coffee_nicky_drink");
 	Show("cup",null);
 	p(message);
@@ -234,6 +238,7 @@ function Tell_Me_A_Truth(message){
 	$.told_story_truth = true;
 	$.order_of_stories.push("truth");
 
+	PlaySound("sfx","coffee_sip");
 	Show("nicky","coffee_nicky_drink");
 	Show("cup",null);
 	p(message);
@@ -309,6 +314,7 @@ function Tell_Me_A_Half_Truth(message){
 	$.told_story_half_truth = true;
 	$.order_of_stories.push("half-truth");
 
+	PlaySound("sfx","coffee_sip");
 	Show("nicky","coffee_nicky_drink");
 	Show("cup",null);
 	p(message);
@@ -443,6 +449,10 @@ function Finale_2(){
 
 	Show("nicky","coffee_nicky_packup_2");
 
+	// SERIOUSNESS.
+	PlaySound("sfx","laptop_shut");
+	PlaySound("bg","bedroom_1",{loop:-1, volume:0.4});
+
 	p("? ? ?");
 
 	if($.punched){
@@ -469,11 +479,13 @@ function Finale_3(message){
 
 	p(message);
 
+	PlaySound("sfx","laptop_pack");
 	Show("nicky","coffee_nicky_packup_3");
 
 	N("Yes, really!");
 	N("I wouldn't have been so motivated to forge my own life... if my previous life wasn't total utter shit.");
 
+	PlaySound("sfx","laptop_pack_2");
 	Show("nicky","coffee_nicky_packup_4");
 
 	N("Later in 2010, Dan Savage launched the It Gets Better&trade; campaign.");
@@ -498,17 +510,29 @@ function Finale_3(message){
 
 	// CUTSCENE -- MY NEW BOYFRIEND
 	Wait(1000);
+	
+	PlaySound("sfx","step_1");
+	PlaySound("sfx2","laptop_pack_2");
 	Show("nicky","coffee_nicky_date_1");
 	Wait(1000);
+	
+	PlaySound("sfx","step_2");
 	Show("nicky","coffee_nicky_date_2");
 	Wait(1000);
+	
+	PlaySound("sfx","step_1");
 	Show("nicky","coffee_nicky_date_3");
 	Wait(1000);
+	
+	PlaySound("sfx","step_2",{volume:0.75});
 	Show("nicky","coffee_nicky_date_4");
 	Wait(1000);
+
+	PlaySound("sfx","step_1",{volume:0.5});
 	Show("nicky",null);
 	Wait(1000);
 
+	PlaySound("sfx","step_2",{volume:0.25});
 	Choose({
 		"REPLAY?": Finale_4
 	});
