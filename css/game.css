@@ -77,13 +77,25 @@ body{
 
 }
 #credits > div{
+
 	width:320px;
-	height:440px;
+	height:360px;
 	position: absolute;
 	margin:auto;
 	top:0; bottom:0; left:0; right:0;
 
-	color:#fff;
+	color: #fff;
+	font-family: sans-serif;
+	font-weight: 100;
+	font-size: 20px;
+	text-align: center;
+
+}
+#credits a{
+	color:#cc2727;
+}
+#credits a:hover{
+	color:#dd3838;
 }
 
 /** Background **/
