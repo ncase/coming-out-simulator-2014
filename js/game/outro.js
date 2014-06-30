@@ -550,7 +550,7 @@ function Finale_4(message){
 	queue(function(){
 		document.getElementById("game").setAttribute("screen","blank");
 	},1000);
-	queue(ClearScene,0);
+	//queue(ClearScene,0); // coz the sound's cool!
 	queue(function(){
 		document.getElementById("game").setAttribute("screen","credits");
 	},0);
