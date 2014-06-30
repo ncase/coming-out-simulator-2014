@@ -45,6 +45,7 @@ subscribe("choose", function(choices){
 
 	// Create choices
 	for(var i=0;i<labels.length;i++){
+
 		var label = labels[i];
 		var button = document.createElement("div");
 		button.innerHTML = label;
@@ -54,7 +55,15 @@ subscribe("choose", function(choices){
 				callback(message);
 			};
 		})(choices[label], label);
+
 		choicesDOM.appendChild(button);
+
+		(function(button){
+			setTimeout(function(){
+				button.setAttribute("shown","true");
+			},100*i);
+		})(button);
+
 	}
 
 	// Choice padding, for 1-3 choices

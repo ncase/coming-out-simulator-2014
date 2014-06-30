@@ -499,10 +499,13 @@ function Finale_3(message){
 
 	N("And...");
 	N("At the end...");
-	N("Of this long, painful, stupid game...");
+	N("Of this long, stupid, painful game...");
 	N("Where I played against people who should have been on my side...");
 
 	p(". . .");
+
+	N("I won.");
+	N(". . .");
 	N("I won.");
 
 	// HACK - Just clear dialogue & stuff.
@@ -539,8 +542,20 @@ function Finale_3(message){
 
 }
 function Finale_4(message){
+	
 	p(message);
 	N("Real life has no replays.");
+
+	Wait(800);
+	queue(function(){
+		document.getElementById("game").setAttribute("screen","blank");
+	},1000);
+	queue(ClearScene,0);
+	queue(function(){
+		document.getElementById("game").setAttribute("screen","credits");
+	},0);
+
+
 }
 
 

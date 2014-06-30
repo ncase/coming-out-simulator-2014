@@ -110,6 +110,7 @@ function Clear(duration){
 	Wait(1000);
 }
 
+var _resourcesLoaded = 0;
 var _resourcePromises = [];
 var _stills = {};
 var _sprites = {};
@@ -119,6 +120,8 @@ function _promiseLoadImage(src){
 	var deferred = Q.defer();
 	var img = new Image();
 	img.onload = function(){
+		_resourcesLoaded++;
+		publish("resourceLoaded",[]);
 		deferred.resolve();
 	};
 	img.src = src;
@@ -152,6 +155,8 @@ function Sound(label,src){
 	(function(label){
 		createjs.Sound.addEventListener("fileload", function(event){
 			if(event.id==label){
+				_resourcesLoaded++;
+				publish("resourceLoaded",[]);
 				deferred.resolve();
 			}
 		});
