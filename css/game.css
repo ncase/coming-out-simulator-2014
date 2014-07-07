@@ -12,19 +12,51 @@ body{
 }
 
 /** GAME **/
-#game{
-
+#game_container{
+	background: #000;
 	width:360px;
-	height:100%;
-	min-height: 480px;
-	max-height: 640px;
-
-	overflow: hidden;
+	height:640px;
 
 	position: absolute;
 	margin:auto;
 	top:0; bottom:0; left:0; right:0;
+}
+#game{
+	width:360px;
+	height:600px;
+	overflow: hidden;
+	position: absolute;
+}
 
+/** SOCIAL **/
+#social{
+
+	position: absolute;
+	bottom:0; right:0;
+	
+	color: #666;
+	text-align: right;
+	font-family: sans-serif;
+	font-size: 16px;
+	font-weight: 100;
+
+	padding: 12px;
+	height:16px;
+
+}
+#social a{
+	text-decoration: none;
+	opacity: 0.5;
+	color: #fff;
+
+	-webkit-transition: opacity 0.2s;
+	-moz-transition: opacity 0.2s;
+	-ms-transition: opacity 0.2s;
+	-o-transition: opacity 0.2s;
+	transition: opacity 0.2s;
+}
+#social a:hover{
+	opacity: 1.0;
 }
 
 /** LOADING **/
