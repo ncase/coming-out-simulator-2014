@@ -1,1 +1,4 @@
 *.DS_Store
+*.jscrc
+*.sublime-project
+*.sublime-workspace
