@@ -5,127 +5,61 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="css/game.css" type="text/css"/>
 </head>
-
 <body>
-	<div id="game_container">
-		<div id="game" screen="loading">
-			
-			<div id="background"></div>
-			<div id="dialogue"></div>
-			<div id="choices"></div>
-
-			<div id="blank"></div>
-			<div id="loading">
-				<div><span style="position: relative; left: 5px;">LOADING</span><br><div id="loading_bar"></div></div>
-			</div>
-			<div id="credits">
-				<div>
-					
-					<span style="font-size:50px; letter-spacing:15px; position:relative; left:6px;">THE END</span>
-					
-					<br><br>
-
-					<span style="font-size:24px;">
-						Coming Out Simulator 2014
-					</span>
-					<br>
-					<span style="color:#555; font-size:16px">
-						by <a href="http://ncase.me" target="_blank">Nicky Case</a> | <a href="http://twitter.com/ncasenmare" target="_blank">@ncasenmare</a>
-					</span>
-					
-					<br><br>
-
-					<span style="font-size:20px">
-						this game is public domain
-						<br>
-						<span style="color:#555; font-size:16px">
-							
-							my open source <a href="https://github.com/ncase/coming-out-simulator-2014" target="_blank">code</a>
-							<br>
-							my design <a href="http://blog.ncase.me/coming-out-simulator-2014/" target="_blank">document</a>
-
-						</span>
-					</span>
-					
-					<br><br>
-
-					<span style="font-size:16px">
-						thank you for<br>playing!<br><br><span style="color:#555">:)</span>
-					</span>
-					
-				</div>
-			</div>
-
+	<div id="game" screen="loading">
+		<div id="background"></div>
+		<div id="dialogue"></div>
+		<div id="choices"></div>
+		<div id="blank"></div>
+		<div id="loading">
+			<div><span style="position: relative; left: 5px;">LOADING</span><br><div id="loading_bar"></div></div>
 		</div>
-		<div id="social">
-
-			<span style="position:relative; top:-2px">share:</span>
-
-			<a target="_blank"
-				href="https://www.facebook.com/sharer.php?u=http%3A%2F%2Fncase.itch.io%2Fcoming-out-simulator-2014&amp;t=Coming Out Simulator 2014, a half-true game about half-truths."
-				data-popup-width="626" data-popup-height="436"
-				onclick="return sharePopup.call(this,event);">
-				<img src="icons/facebook.png" width="16" height="16"/>
-			</a>
-
-			<a target="_blank"
-				href="https://twitter.com/share?url=http%3A%2F%2Fncase.itch.io%2Fcoming-out-simulator-2014&amp;text=Coming Out Simulator 2014, a half-true game about half-truths.&amp;via=ncasenmare"
-				data-popup-width="640" data-popup-height="400"
-				onclick="return sharePopup.call(this,event);">
-				<img src="icons/twitter.png" width="16" height="16"/>
-			</a>
-
-			<a target="_blank"
-				href="https://plus.google.com/share?url=http%3A%2F%2Fncase.itch.io%2Fcoming-out-simulator-2014"
-				data-popup-width="600" data-popup-height="460"
-				onclick="return sharePopup.call(this,event);">
-				<img src="icons/google.png" width="16" height="16"/>
-			</a>
-
-			<a target="_blank"
-				href="https://www.tumblr.com/share/link?url=http%3A%2F%2Fncase.itch.io%2Fcoming-out-simulator-2014&amp;name=Coming Out Simulator 2014&amp;description=A heartbreaking and heartwarming story-game."
-				data-popup-width="446" data-popup-height="430"
-				onclick="return sharePopup.call(this,event);">
-				<img src="icons/tumblr.png" width="16" height="16"/>
-			</a>
-
-			<a target="_blank"
-				href="http://www.reddit.com/submit?url=http%3A%2F%2Fncase.itch.io%2Fcoming-out-simulator-2014&amp;title=Coming Out Simulator 2014">
-				<img src="icons/reddit.png" width="16" height="16"/>
-			</a>
-		 
-			<a target="_blank"
-				href="https://www.stumbleupon.com/submit?url=http%3A%2F%2Fncase.itch.io%2Fcoming-out-simulator-2014&amp;title=Coming Out Simulator 2014">
-				<img src="icons/stumbleupon.png" width="16" height="16"/>
-			</a>
-
-
+		<div id="credits">
+			<div>
+				<span style="font-size:50px; letter-spacing:15px; position:relative; left:6px;">THE END</span>
+				<br><br>
+				<span style="font-size:24px;">
+					Coming Out Simulator 2014
+				</span>
+				<br>
+				<span style="color:#555; font-size:16px">
+					by <a href="http://ncase.me" target="_blank">Nicky Case</a> | <a href="http://twitter.com/ncasenmare" target="_blank">@ncasenmare</a>
+				</span>		
+				<br><br>
+				<span style="font-size:20px">
+					this game is public domain
+					<br>
+					<span style="color:#555; font-size:16px">			
+						my open source <a href="https://github.com/ncase/coming-out-simulator-2014" target="_blank">code</a>
+						<br>
+						my design <a href="http://blog.ncase.me/coming-out-simulator-2014/" target="_blank">document</a>
+					</span>
+				</span>		
+				<br><br>
+				<span style="font-size:16px">
+					thank you for<br>playing!<br><br><span style="color:#555">:)</span>
+				</span>	
+			</div>
 		</div>
 	</div>
+	<script src="js/core/q.js"></script>
+	<script src="js/core/minsubpub.js"></script>
+	<script src="js/core/soundjs-0.5.2.min.js"></script>
+	<script src="js/core/Choose.js"></script>
+	<script src="js/core/ChooseView.js"></script>
+	<script src="js/config/art.js"></script>
+	<script src="js/config/sounds.js"></script>
+	<script src="js/config/characters.js"></script>
+	<script src="js/game/menu.js"></script>
+	<script src="js/game/jack_1.js"></script>
+	<script src="js/game/dinner_1.js"></script>
+	<script src="js/game/dinner_2.js"></script>
+	<script src="js/game/dinner_3.js"></script>
+	<script src="js/game/dinner_4.js"></script>
+	<script src="js/game/dinner_5.js"></script>
+	<script src="js/game/jack_2.js"></script>
+	<script src="js/game/outro.js"></script>
+
+	<script src="js/main.js"></script>
 </body>
-
-<script src="js/core/q.js"></script>
-<script src="js/core/minsubpub.js"></script>
-<script src="js/core/soundjs-0.5.2.min.js"></script>
-<script src="js/core/popup.js"></script>
-
-<script src="js/core/Choose.js"></script>
-<script src="js/core/ChooseView.js"></script>
-
-<script src="js/config/art.js"></script>
-<script src="js/config/sounds.js"></script>
-<script src="js/config/characters.js"></script>
-
-<script src="js/game/menu.js"></script>
-<script src="js/game/jack_1.js"></script>
-<script src="js/game/dinner_1.js"></script>
-<script src="js/game/dinner_2.js"></script>
-<script src="js/game/dinner_3.js"></script>
-<script src="js/game/dinner_4.js"></script>
-<script src="js/game/dinner_5.js"></script>
-<script src="js/game/jack_2.js"></script>
-<script src="js/game/outro.js"></script>
-
-<script src="js/main.js"></script>
-
 </html>
