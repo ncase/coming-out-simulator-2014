@@ -68,7 +68,7 @@ function queue(callback, duration, instantaneous){
  * Creates a new Character that can speak dialogue in the game
  * @param {Object} options [description]
  */
-function Character(options) {
+function Character(character) {
 	return function(message) {
 		if(!message) return;
 		queue(function() {
