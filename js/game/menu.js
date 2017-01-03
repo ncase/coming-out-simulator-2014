@@ -342,19 +342,19 @@ function About(message){
 
 	if($.asked_credits){
 		// N("I wanted to tell my story.");
-		N("我想要讲一讲我自己身上的故事");
+		N("我想要讲一讲我自己身上的故事。");
 	}else{
 		// N("This game...");
 		// N("...more like a conversation simulator, really...");
 		// N("...is a very personal story.");
 		N("这个游戏…");
-		N("…更像是一个聊天模拟，真的…");
-		N("…是个很私人的故事");
+		N("…更像是一个聊天模拟，讲的…");
+		N("…真的是个很私人的故事");
 	}
 	
 	// p("Of course. You narcissist.");
 	// N("Ha, of course.");
-	p("你个自恋狂");
+	p("你个自恋狂。");
 	N("哈，没错。");
 
 	if($.asked_credits){
