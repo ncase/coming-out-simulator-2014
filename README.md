@@ -1,3 +1,10 @@
+出柜模拟2014
+汉化 WIP
+
+
+---
+
+
 **Coming Out Simulator 2014**    
 a half-true game about half-truths.
 
