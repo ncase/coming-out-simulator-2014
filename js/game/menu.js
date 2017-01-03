@@ -17,7 +17,7 @@
 	// N("A half-true game about half-truths.");
 	N("这是一个不太真实的游戏，取材于一个不太虚构的故事");
 	// N("Hey there, player. Welcome to this game, I guess.");
-	N("嘿，屏幕对面的。欢迎来到这个…游戏……吧？");
+	N("嘿，屏幕对面的。欢迎来到这个游戏。很高兴能给您带来大概20分钟的游戏时间……大概吧。");
 	// N("What would you like to do now?");
 	N("那么接下来你打算要做什么？");
 
