@@ -218,7 +218,7 @@ function Play_3(){
 		// case 2: whatISay += "And there are no right answers."; break;
 		case 2: whatISay += "并且这里没有正确答案。"; break;
 		// case 3: whatISay += "And it's full of lies."; break;
-		case 3: whatISay += "并且里面充满充斥着谎言。"; break;
+		case 3: whatISay += "并且里面充斥着谎言。"; break;
 	}
 	N(whatISay);
 
