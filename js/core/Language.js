@@ -75,7 +75,7 @@ Choose({
     	console.log(msg);
 		});
 	},
-	"SChinese": function(message){
+	"Simplified Chinese": function(message){
 		getJS(menu_SChinese).then(function(msg){
     	return getJS(jack_1_SChinese);
 		}).then(function(msg){
