@@ -1,79 +1,93 @@
+function getJS(url) {
+    return new Promise(function(resolve, reject) {
+        var script = document.createElement('script');
+        script.type = "text/javascript";
 
-Loader = (function() {
+        if (script.readyState){  //IE
+            script.onreadystatechange = function() {
+                if (script.readyState == "loaded" ||
+                        script.readyState == "complete") {
+                    script.onreadystatechange = null;
+                    resolve('success: '+url);
+                }
+            };
+        } else {  //Others
+            script.onload = function(){
+                resolve('success: '+url);
+            };
+        }
 
-  var load_cursor = 0;
-  var load_queue;
-
-  var loadFinished = function() {
-    load_cursor ++;
-    if (load_cursor < load_queue.length) {
-      loadScript();
-    }
-  }
-
-  function loadError (oError) {
-    console.error("The script " + oError.target.src + " is not accessible.");
-  }
-
-
-  var loadScript = function() {
-    var url = load_queue[load_cursor];
-    var script = document.createElement('script');
-    script.type = "text/javascript";
-
-    if (script.readyState){  //IE
-        script.onreadystatechange = function(){
-            if (script.readyState == "loaded" ||
-                    script.readyState == "complete"){
-                script.onreadystatechange = null;
-                loadFinished();
-            }
+        script.onerror = function() {
+            reject(Error(url + 'load error!'));
         };
-    } else {  //Others
-        script.onload = function(){
-            loadFinished();
-        };
-    }
 
-    script.onerror = loadError;
+        script.src = url+'?'+'time='+Date.parse(new Date());
+        document.body.appendChild(script);
 
-    script.src = url+'?'+'time='+Date.parse(new Date());
-    document.body.appendChild(script);
-  };
+    });
+}
 
-  var loadMultiScript = function(url_array) {
-    load_cursor = 0;
-    load_queue = url_array;
-    loadScript();
-  }
-  return {load: loadMultiScript,};
+//loading
+var menu ='js/game/menu.js',
+    jack_1 ='js/game/jack_1.js',
+    dinner_1 ='js/game/dinner_1.js',
+    dinner_2 ='js/game/dinner_2.js',
+    dinner_3 ='js/game/dinner_3.js',
+    dinner_4 ='js/game/dinner_4.js',
+    dinner_5 ='js/game/dinner_5.js',
+    jack_2 ='js/game/jack_2.js',
+    outro ='js/game/outro.js'
+	menu_SChinese = 'js/game/menu_zh-cn.js',
+    jack_1_SChinese ='js/game/jack_1_zh-cn.js',
+    dinner_1_SChinese ='js/game/dinner_1_zh-cn.js',
+    dinner_2_SChinese ='js/game/dinner_2_zh-cn.js',
+    dinner_3_SChinese ='js/game/dinner_3_zh-cn.js',
+    dinner_4_SChinese ='js/game/dinner_4_zh-cn.js',
+    dinner_5_SChinese ='js/game/dinner_5_zh-cn.js',
+    jack_2_SChinese ='js/game/jack_2_zh-cn.js',
+    outro_SChinese ='js/game/outro_zh-cn.js'
+;
 
-})();  // end Loader
-
-//loading ...
- $.language = "SChinese";
+ $.language = "English";
  switch($.language){
-	case "SChinese": Loader.load([
-        'js/game/menu_zh-cn.js',
-        'js/game/jack_1_zh-cn.js',
-        'js/game/dinner_1_zh-cn.js',
-        'js/game/dinner_2_zh-cn.js',
-        'js/game/dinner_3_zh-cn.js',
-        'js/game/dinner_4_zh-cn.js',
-        'js/game/dinner_5_zh-cn.js',
-        'js/game/jack_2_zh-cn.js',
-        'js/game/outro_zh-cn.js'
-    	]);break;
-    case "English": Loader.load([
-        'js/game/menu.js',
-        'js/game/jack_1.js',
-        'js/game/dinner_1.js',
-        'js/game/dinner_2.js',
-        'js/game/dinner_3.js',
-        'js/game/dinner_4.js',
-        'js/game/dinner_5.js',
-        'js/game/jack_2.js',
-        'js/game/outro.js'
-    	]);break;
-
+	case "English": 
+		getJS(menu).then(function(msg){
+    	return getJS(jack_1);
+		}).then(function(msg){
+    	return getJS(dinner_1);
+		}).then(function(msg){
+    	return getJS(dinner_2);
+		}).then(function(msg){
+    	return getJS(dinner_3);
+		}).then(function(msg){
+    	return getJS(dinner_4);
+		}).then(function(msg){
+    	return getJS(dinner_5);
+		}).then(function(msg){
+    	return getJS(jack_2);
+		}).then(function(msg){
+    	return getJS(outro);
+		}).then(function(msg){
+    	console.log(msg);
+		});break;
+    case "SChinese":
+		getJS(menu_SChinese).then(function(msg){
+    	return getJS(jack_1_SChinese);
+		}).then(function(msg){
+    	return getJS(dinner_1_SChinese);
+		}).then(function(msg){
+    	return getJS(dinner_2_SChinese);
+		}).then(function(msg){
+    	return getJS(dinner_3_SChinese);
+		}).then(function(msg){
+    	return getJS(dinner_4_SChinese);
+		}).then(function(msg){
+    	return getJS(dinner_5_SChinese);
+		}).then(function(msg){
+    	return getJS(jack_2_SChinese);
+		}).then(function(msg){
+    	return getJS(outro_SChinese);
+		}).then(function(msg){
+    	console.log(msg);
+		});break;
     }
