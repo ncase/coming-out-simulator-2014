@@ -1,3 +1,4 @@
+
 function getJS(url) {
     return new Promise(function(resolve, reject) {
         var script = document.createElement('script');
@@ -28,7 +29,9 @@ function getJS(url) {
 }
 
 //loading
-var menu ='js/game/menu.js',
+var main ='js/main.js',
+	init ='js/init.js',
+	menu ='js/game/menu.js',
     jack_1 ='js/game/jack_1.js',
     dinner_1 ='js/game/dinner_1.js',
     dinner_2 ='js/game/dinner_2.js',
@@ -48,9 +51,8 @@ var menu ='js/game/menu.js',
     outro_SChinese ='js/game/outro_zh-cn.js'
 ;
 
- $.language = "English";
- switch($.language){
-	case "English": 
+Choose({
+	"English": function(message){
 		getJS(menu).then(function(msg){
     	return getJS(jack_1);
 		}).then(function(msg){
@@ -68,9 +70,12 @@ var menu ='js/game/menu.js',
 		}).then(function(msg){
     	return getJS(outro);
 		}).then(function(msg){
+		return getJS(init);
+		}).then(function(msg){
     	console.log(msg);
-		});break;
-    case "SChinese":
+		});
+	},
+	"SChinese": function(message){
 		getJS(menu_SChinese).then(function(msg){
     	return getJS(jack_1_SChinese);
 		}).then(function(msg){
@@ -88,6 +93,9 @@ var menu ='js/game/menu.js',
 		}).then(function(msg){
     	return getJS(outro_SChinese);
 		}).then(function(msg){
+		return getJS(init);
+		}).then(function(msg){
     	console.log(msg);
-		});break;
-    }
+		});
+	}
+});
