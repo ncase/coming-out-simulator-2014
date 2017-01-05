@@ -53,49 +53,18 @@ var main ='js/main.js',
 
 Choose({
 	"English": function(message){
-		getJS(menu).then(function(msg){
-    	return getJS(jack_1);
-		}).then(function(msg){
-    	return getJS(dinner_1);
-		}).then(function(msg){
-    	return getJS(dinner_2);
-		}).then(function(msg){
-    	return getJS(dinner_3);
-		}).then(function(msg){
-    	return getJS(dinner_4);
-		}).then(function(msg){
-    	return getJS(dinner_5);
-		}).then(function(msg){
-    	return getJS(jack_2);
-		}).then(function(msg){
-    	return getJS(outro);
-		}).then(function(msg){
-		return getJS(init);
-		}).then(function(msg){
-    	console.log(msg);
-		});
+        Promise.all([getJS(menu), getJS(jack_1)],getJS(dinner_1),getJS(dinner_2),getJS(dinner_3),getJS(dinner_4),getJS(dinner_5),getJS(jack_2),getJS(outro)).then(function(results){
+           return getJS(init);
+        }).then(function(msg){
+            console.log(msg);
+        });
+
 	},
 	"Simplified Chinese": function(message){
-		getJS(menu_SChinese).then(function(msg){
-    	return getJS(jack_1_SChinese);
-		}).then(function(msg){
-    	return getJS(dinner_1_SChinese);
-		}).then(function(msg){
-    	return getJS(dinner_2_SChinese);
-		}).then(function(msg){
-    	return getJS(dinner_3_SChinese);
-		}).then(function(msg){
-    	return getJS(dinner_4_SChinese);
-		}).then(function(msg){
-    	return getJS(dinner_5_SChinese);
-		}).then(function(msg){
-    	return getJS(jack_2_SChinese);
-		}).then(function(msg){
-    	return getJS(outro_SChinese);
-		}).then(function(msg){
-		return getJS(init);
-		}).then(function(msg){
-    	console.log(msg);
-		});
+        Promise.all([getJS(menu_SChinese), getJS(jack_1_SChinese)],getJS(dinner_1_SChinese),getJS(dinner_2_SChinese),getJS(dinner_3_SChinese),getJS(dinner_4_SChinese),getJS(dinner_5_SChinese),getJS(jack_2_SChinese),getJS(outro_SChinese)).then(function(results){
+           return getJS(init);
+        }).then(function(msg){
+            console.log(msg);
+        });
 	}
 });
