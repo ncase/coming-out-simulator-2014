@@ -208,7 +208,7 @@ function Threat_Tutor(){
 			m("Just... one more thing.");
 			Plot_Twist();
 		},
-		"What if just DON'T study with Claire?": function(message){
+		"What if I just DON'T study with Claire?": function(message){
 			n(message);
 			m("Well, if you also want to hang out with her, that's good too.");
 			m("Anything to make you more manly.");
