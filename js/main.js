@@ -11,7 +11,6 @@ window.onload = function(){
 		},1000);
 		setTimeout(function(){
 			document.getElementById("game").setAttribute("screen","game");
-			Start();
 		},1500);
 	});
 

@@ -48,7 +48,9 @@ function resetTimer(){
 var TIMER_GAP = 100;
 function getDuration(message){
 	// Approx 6 words per second, or 160ms per word. Plus 800ms just in case.
-	return 800 + message.split(" ").length*160;
+	// return 800 + message.split(" ").length*160;
+	// 300字每分钟，折合每个字0.2秒，然后/2
+	return 1000 + message.length*100;
 }
 
 var _queue = [];
