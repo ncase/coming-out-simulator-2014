@@ -59,8 +59,12 @@ function Play(message){
 		N("Yes, let's!");
 	}
 
-	N("Let's travel back four years ago, to 2010...");
-	p("That was FOUR years ago?!");
+	var currentYear = (new Date()).getFullYear();
+	var yearsPassed = currentYear - 2010;
+	var yearsInWords = numberInWords(yearsPassed);
+
+	N("Let's travel back " + yearsInWords + " years ago, to 2010...");
+	p("That was " + yearsInWords.toUpperCase() + " years ago?!");
 	N("...to the evening that changed my life forever.");
 
 	N("Tell me, dear player, how do you think this all ends?");
