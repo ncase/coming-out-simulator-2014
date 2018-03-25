@@ -6,16 +6,21 @@ window.onload = function(){
 	});
 
 	Q.all(_resourcePromises).then(function(){
-		setTimeout(function(){
-			document.getElementById("game").setAttribute("screen","blank");
-		},1000);
-		setTimeout(function(){
-			document.getElementById("game").setAttribute("screen","game");
-			Start();
-		},1500);
+		document.getElementById("game").style.display = "none";
+		document.getElementById("startBtn").style.display = "block";
+		document.getElementById("startBtn").addEventListener("click", launchGame);
 	});
 
 };
+
+function launchGame() {
+	document.getElementById("game").style.display = "block";
+	document.getElementById("game").setAttribute("screen","game");
+	createjs.Sound.play("text_mid");
+	createjs.Sound.stop("text_mid");
+	Start();
+	document.getElementById("startBtn").style.display = "none";
+}
 
 
 ////////////////////////////////

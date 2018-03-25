@@ -11,6 +11,19 @@ body{
 
 }
 
+#startBtn {
+	color: #bbb;
+	font-family: sans-serif;
+	cursor: pointer;
+	text-align: center;
+	line-height: 500px;
+	display: none;
+}
+
+#startBtn:hover {
+	text-decoration: underline;
+}
+
 /** GAME **/
 #game_container{
 	background: #000;
