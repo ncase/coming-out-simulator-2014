@@ -96,7 +96,7 @@ function Waiting_2(message){
 			
 			Waiting_End();
 		},
-		"Meow! Meow! Meow! Meow!": function(message){
+		"Meow! Meow! Meow! Meow! Meow!": function(message){
 			
 			n("Meow.");
 			n("Meow!");
